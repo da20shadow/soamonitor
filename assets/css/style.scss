@@ -1,0 +1,43 @@
+@import "_variables";
+@import "_mixins";
+@import "_header";
+@import "_footer";
+@import "_forms";
+@import "_account";
+@import "_articles";
+
+*{
+  margin: 0;
+}
+
+body{
+  background-color: $neutralBlue;
+}
+
+/* ----- Heading 1 - 6 & Paragraphs ----- */
+
+//Headings
+h1{
+  @include heading1();
+}
+h2{
+  @include heading2();
+}
+h3{
+  @include heading3();
+}
+
+//Paragraph Normal Medium Small Caption etc.
+p{
+  @include normalP();
+}
+
+/* ----- Buttons ---- */
+.n-btn{
+  @include n-btn();
+}
+.lg-btn{
+  @include lg-btn();
+}
+
+/* ----- T ----- */

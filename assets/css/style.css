@@ -1,0 +1,80 @@
+/* ---- Project Colors ---- */
+/* ---- Project Colors ---- */
+/* Typography H1 H2 H3 H4 H5 H6 p etc */
+/* ---- Buttons Style ---- */
+/* ---- T ---- */
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #F2F7FF;
+}
+
+/* ----- Heading 1 - 6 & Paragraphs ----- */
+h1 {
+  font-family: "Heebo", sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+  font-size: 3.2rem;
+}
+
+h2 {
+  font-family: "Heebo", sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+  font-size: 3.2rem;
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-family: "Heebo", sans-serif;
+  font-weight: 700;
+  line-height: 1.25;
+  font-size: 3.2rem;
+  font-size: 1.7rem;
+}
+
+p {
+  font-family: "Heebo", sans-serif;
+  font-weight: 500;
+  line-height: 1.25;
+  font-size: 1rem;
+}
+
+/* ----- Buttons ---- */
+.n-btn {
+  background-color: #2263dc;
+  color: #F2F7FF;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+.n-btn:hover {
+  background-color: #1354BD;
+}
+
+.lg-btn {
+  background-color: #2263dc;
+  color: #F2F7FF;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 1rem;
+  padding: 15px 30px;
+  font-size: 1.3rem;
+}
+.lg-btn:hover {
+  background-color: #1354BD;
+}
+
+/* ----- T ----- */
+
+/*# sourceMappingURL=style.css.map */
