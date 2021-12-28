@@ -1,8 +1,8 @@
 @import "_variables";
-@import "_mixins";
 @import "_header";
-@import "_footer";
+@import "_mixins";
 @import "_forms";
+@import "_footer";
 @import "_account";
 @import "_articles";
 
@@ -14,18 +14,43 @@ body{
   background-color: $neutralBlue;
 }
 
+//Dropdown Items
+.dropdown-item {
+  color: $primaryTextColor;
+  font-weight: 600;
+  width: 94%;
+  margin: 0 auto;
+  &:hover{
+    background-color: #e5f0fa;
+    color: #086bc9;
+    border-radius: 0.325rem;
+    i{
+      color: #086bc9;
+    }
+  }
+}
+//Category dropdown button
+.category-menu{
+  background-color: #e5f0fa;
+  font-weight: 600;
+}
+
+// Avatar Dropdown Menu
+
+#avatar-dropdown{
+  border-radius: 0.325rem;
+  #sign-out:hover{
+      background-color: rgba(214, 41, 62, 0.1);
+      color: #d6293e;
+      border-radius: 0.325rem;
+      i{
+        color: #d6293e;
+      }
+    }
+}
+
 /* ----- Heading 1 - 6 & Paragraphs ----- */
 
-//Headings
-h1{
-  @include heading1();
-}
-h2{
-  @include heading2();
-}
-h3{
-  @include heading3();
-}
 
 //Paragraph Normal Medium Small Caption etc.
 p{

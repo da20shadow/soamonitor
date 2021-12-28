@@ -11,30 +11,39 @@ body {
   background-color: #F2F7FF;
 }
 
+.dropdown-item {
+  color: #002869;
+  font-weight: 600;
+  width: 94%;
+  margin: 0 auto;
+}
+.dropdown-item:hover {
+  background-color: #e5f0fa;
+  color: #086bc9;
+  border-radius: 0.325rem;
+}
+.dropdown-item:hover i {
+  color: #086bc9;
+}
+
+.category-menu {
+  background-color: #e5f0fa;
+  font-weight: 600;
+}
+
+#avatar-dropdown {
+  border-radius: 0.325rem;
+}
+#avatar-dropdown #sign-out:hover {
+  background-color: rgba(214, 41, 62, 0.1);
+  color: #d6293e;
+  border-radius: 0.325rem;
+}
+#avatar-dropdown #sign-out:hover i {
+  color: #d6293e;
+}
+
 /* ----- Heading 1 - 6 & Paragraphs ----- */
-h1 {
-  font-family: "Heebo", sans-serif;
-  font-weight: 700;
-  line-height: 1.25;
-  font-size: 3.2rem;
-}
-
-h2 {
-  font-family: "Heebo", sans-serif;
-  font-weight: 700;
-  line-height: 1.25;
-  font-size: 3.2rem;
-  font-size: 2.5rem;
-}
-
-h3 {
-  font-family: "Heebo", sans-serif;
-  font-weight: 700;
-  line-height: 1.25;
-  font-size: 3.2rem;
-  font-size: 1.7rem;
-}
-
 p {
   font-family: "Heebo", sans-serif;
   font-weight: 500;
