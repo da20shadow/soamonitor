@@ -1,4 +1,5 @@
 @import "_variables";
+@import "_icons";
 @import "_header";
 @import "_mixins";
 @import "_forms";
@@ -30,23 +31,61 @@ body{
   }
 }
 //Category dropdown button
-.category-menu{
+#categories-menu{
   background-color: #e5f0fa;
+}
+//Bootstrap dropdown
+.dropdown-menu{
+  font-weight: 600;
+  min-width: 16rem;
+}
+//Bootstrap nav links
+.nav-link{
+  color: $primaryTextColor;
   font-weight: 600;
 }
-
 // Avatar Dropdown Menu
-
 #avatar-dropdown{
   border-radius: 0.325rem;
-  #sign-out:hover{
-      background-color: rgba(214, 41, 62, 0.1);
-      color: #d6293e;
-      border-radius: 0.325rem;
-      i{
-        color: #d6293e;
-      }
-    }
+}
+.sign-out:hover{
+  background-color: rgba(214, 41, 62, 0.1);
+  color: #d6293e;
+  border-radius: 0.325rem;
+  i{
+    color: #d6293e;
+  }
+}
+//Blog Statistics
+.stat{
+  //margin: 20px auto;
+  border-radius: 11px;
+  height: 120px;
+}
+.stat-heart{
+  padding: 0 -12px;
+  background-color: #fef6e0;
+  i{
+    color: #f7c32e;
+  }
+}
+.stat-coin{
+  background-color: #e8ebed;
+  i{
+    color: #1d3b53;
+  }
+}
+.stat-reviews{
+  background-color: #f0ebf9;
+  i{
+    color: #6f42c1;
+  }
+}
+.stat-members{
+  background-color: #e7f6f8;
+  i{
+    color: #17a2b8;
+  }
 }
 
 /* ----- Heading 1 - 6 & Paragraphs ----- */

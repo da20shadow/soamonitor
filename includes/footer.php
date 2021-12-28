@@ -80,6 +80,13 @@
     <!-- Copyright -->
 </footer>
 <!-- Footer -->
+<div class="fixed-bottom bg-info w-75 h-auto text-center m-auto border rounded py-1">
+    To make Soa monitor work, we log user data.
+    By using Soa monitor, you agree to our <a href="privacy.php">Privacy Policy</a>,
+    including cookie policy.
+    <button type="button" class="btn-close" aria-label="Close"></button>
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

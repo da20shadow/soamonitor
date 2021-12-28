@@ -1,5 +1,5 @@
 <?php
-$title = "My Investments - SOAMonitor.com";
+$title = "Account - SOAMonitor.com";
 include ('includes/header.php');
 ?>
 <div class="container-fluid p-1"></div>
@@ -79,20 +79,21 @@ include ('includes/header.php');
                                     </a>
                                 </div><!--Upgrade Link END-->
                                 <div class="col-12">
-                                    <a href="earnigns.php" class="a-m nav-link border-bottom">
+                                    <a href="earnings.php" class="a-m nav-link border-bottom">
                                         <i class="bi bi-graph-up fa-fw me-2"></i>Earnings
                                     </a>
                                 </div><!--Earnings Link END-->
                                 <div class="col-12">
                                     <a href="my_investments.php" class="a-m nav-link border-bottom">
                                         <i class="bi bi-clipboard-data me-2"></i>My Investments</a>
-                                </div>
+                                </div><!--My Investments Link END-->
                                 <div class="col-12">
-                                    <a href="#" class="a-m nav-link border-bottom">Earnings</a>
-                                </div>
+                                    <a href="#" class="a-m nav-link border-bottom">Subscription</a>
+                                </div><!--My Subscription Link END-->
                                 <div class="col-12">
-                                    <a href="#" class="a-m nav-link border-bottom">Payouts</a>
-                                </div>
+                                    <a href="#" class="a-m nav-link border-bottom">
+                                        <i class="bi bi-wallet2 fa-fw me-2"></i>Payouts</a>
+                                </div><!--Payouts Link END-->
                                 <div class="col-12">
                                     <a href="#" class="sign-out a-m nav-link border-bottom"><i class="bi bi-trash fa-fw me-2"></i>Delete Account</a>
                                 </div>
@@ -100,6 +101,7 @@ include ('includes/header.php');
                         </div>
                     </div>
                 </nav>
+
             </div>
             <!--Main Content -->
             <div class="col-xl-9">
@@ -153,23 +155,78 @@ include ('includes/header.php');
                     <div class="col-12">
                         <div class="card card-body bg-transparent border p-4 h-100">
                             <div class="row g-4">
-                                <h3>My Investments</h3>
+                                <h3>Payouts</h3>
                             </div>
-                            <!--Apex Chart-->
+                            <!--Payouts Table-->
+                            <div class="card bg-transparent border rounded-3">
 
-                            <table>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Deposit</th>
-                                    <th>Withdrawal</th>
-                                </tr>
-                                <tr>
-                                    <td>Site name</td>
-                                    <td>$123</td>
-                                    <td>$53</td>
-                                </tr>
-                            </table>
+                                <!-- Card body START -->
+                                <div class="card-body">
 
+                                    <!-- Payout list table START -->
+                                    <div class="table-responsive border-0">
+                                        <table class="table table-dark-gray align-middle p-4 mb-0 table-hover">
+                                            <!-- Table head -->
+                                            <thead>
+                                            <tr>
+                                                <th scope="col" class="border-0 rounded-start">Payout</th>
+                                                <th scope="col" class="border-0">Amount</th>
+                                                <th scope="col" class="border-0">Status</th>
+                                                <th scope="col" class="border-0 rounded-end">Date</th>
+                                            </tr>
+                                            </thead>
+                                            <!-- Table body START -->
+                                            <tbody>
+                                            <!-- Table item -->
+                                            <tr>
+                                                <!-- Table data -->
+                                                <td>
+                                                    <h6 class="mt-2 mt-lg-0 mb-0"><a href="#">Successful payout #102356</a></h6>
+                                                </td>
+
+                                                <!-- Table data -->
+                                                <td>$3,999
+                                                    <!-- Drop down with id -->
+                                                    <a href="#" class="h6 mb-0" role="button" id="dropdownShare" data-bs-toggle="dropdown" aria-expanded="false">
+                                                        <i class="bi bi-info-circle-fill"></i>
+                                                    </a>
+                                                    <ul class="dropdown-menu dropdown-w-sm dropdown-menu-end min-w-auto shadow rounded" aria-labelledby="dropdownShare">
+                                                        <li>
+                                                            <div class="d-flex justify-content-between">
+                                                                <span class="small">Commission</span>
+                                                                <span class="h6 mb-0 small">$86</span>
+                                                            </div>
+                                                            <hr class="my-1">
+                                                        </li>
+                                                        <!-- Divider -->
+                                                        <li>
+                                                            <div class="d-flex justify-content-between">
+                                                                <span class="small">Earning</span>
+                                                                <span class="h6 mb-0 small">$86</span>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </td>
+
+                                                <!-- Table data -->
+                                                <td class="text-center text-sm-start">
+                                                    <span class="badge bg-success bg-opacity-10 text-success">Paid</span>
+                                                </td>
+
+                                                <!-- Table data -->
+                                                <td>18/8/2021</td>
+                                            </tr>
+
+                                            </tbody>
+                                            <!-- Table body END -->
+                                        </table>
+                                    </div>
+                                    <!-- Payout list table END -->
+
+                                </div>
+                                <!-- Card body START -->
+
+                            </div>
                         </div>
                     </div>
                 </div>

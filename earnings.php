@@ -1,5 +1,5 @@
 <?php
-$title = "My Investments - SOAMonitor.com";
+$title = "Earnings - SOAMonitor.com";
 include ('includes/header.php');
 ?>
 <div class="container-fluid p-1"></div>
@@ -79,7 +79,7 @@ include ('includes/header.php');
                                     </a>
                                 </div><!--Upgrade Link END-->
                                 <div class="col-12">
-                                    <a href="earnigns.php" class="a-m nav-link border-bottom">
+                                    <a href="#" class="a-m nav-link border-bottom">
                                         <i class="bi bi-graph-up fa-fw me-2"></i>Earnings
                                     </a>
                                 </div><!--Earnings Link END-->
@@ -105,70 +105,47 @@ include ('includes/header.php');
             <div class="col-xl-9">
                 <!-- Balance Statistics -->
                 <div class="row g-4">
+
+                    <!-- Earning item -->
                     <div class="col-sm-6 col-lg-4">
-                        <div class="stat stat-heart d-flex justify-content-center align-items-center shadow-sm">
-                            <span class="display-4">
-                                <i class="bi bi-heart"></i>
-                            </span>
-                            <div class="ms-4 h6 fw-normal">
-                                <div class="d-flex align-items-center">
-                                    <h4 class="mb-0 fw-bold">4.8</h4>
-                                    <h4 class="mb-0 fw-bold">K</h4>
-                                </div>
-                                <h5>Subscribers</h5>
-                            </div>
+                        <div class="text-center p-4 bg-light rounded-3 shadow-lg">
+                            <h6>Earnings this month</h6>
+                            <h2 class="mb-0 fs-2 fw-bold">$299.95</h2>
                         </div>
                     </div>
+
+                    <!-- Earning item -->
                     <div class="col-sm-6 col-lg-4">
-                        <div class="stat stat-reviews d-flex justify-content-center align-items-center
-            shadow-sm">
-                            <span class="display-4">
-                                <i class="bi bi-cash-coin"></i>
-                            </span>
-                            <div class="ms-4 h6 fw-normal">
-                                <div class="d-flex align-items-center">
-                                    <h4 class="mb-0 fw-bold">$213.32</h4>
-                                </div>
-                                <h5>Paid in Contests</h5>
-                            </div>
+                        <div class="text-center p-4 bg-light rounded-3 shadow-lg">
+                            <h6>Affiliate commissions
+                                <a tabindex="0" class="h6 mb-0" role="button" data-bs-toggle="popover"
+                                   data-bs-trigger="focus" data-bs-placement="top"
+                                   data-bs-content="After US royalty withholding tax"
+                                   data-bs-original-title="" title="">
+                                    <i class="bi bi-info-circle-fill small"></i>
+                                </a>
+                            </h6>
+                            <h2 class="mb-0 fs-2 fw-bold">$750.35</h2>
                         </div>
                     </div>
+
+                    <!-- Earning item -->
                     <div class="col-sm-6 col-lg-4">
-                        <div class="stat stat-members d-flex justify-content-center align-items-center
-            shadow-sm">
-                            <span class="display-4">
-                                <i class="bi bi-people"></i>
-                            </span>
-                            <div class="ms-4 h6 fw-normal">
-                                <div class="d-flex align-items-center">
-                                    <h4 class="mb-0 fw-bold">12</h4>
-                                </div>
-                                <h5>Members</h5>
-                            </div>
+                        <div class="text-center p-4 bg-light rounded-3 shadow-lg">
+                            <h6>Lifetime Earnings</h6>
+                            <h2 class="mb-0 fs-2 fw-bold">$4882.65</h2>
                         </div>
                     </div>
+
                 </div>
                 <!-- Chart -->
                 <div class="row mt-5">
                     <div class="col-12">
                         <div class="card card-body bg-transparent border p-4 h-100">
                             <div class="row g-4">
-                                <h3>My Investments</h3>
+                                <h3>Earned Commissions etc</h3>
                             </div>
                             <!--Apex Chart-->
-
-                            <table>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Deposit</th>
-                                    <th>Withdrawal</th>
-                                </tr>
-                                <tr>
-                                    <td>Site name</td>
-                                    <td>$123</td>
-                                    <td>$53</td>
-                                </tr>
-                            </table>
 
                         </div>
                     </div>

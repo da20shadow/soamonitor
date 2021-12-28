@@ -3,6 +3,12 @@
 /* Typography H1 H2 H3 H4 H5 H6 p etc */
 /* ---- Buttons Style ---- */
 /* ---- T ---- */
+.a-m:hover {
+  background-color: #e5f0fa;
+  color: #086bc9;
+  border-radius: 0.325rem;
+}
+
 * {
   margin: 0;
 }
@@ -26,21 +32,65 @@ body {
   color: #086bc9;
 }
 
-.category-menu {
+#categories-menu {
   background-color: #e5f0fa;
+}
+
+.dropdown-menu {
+  font-weight: 600;
+  min-width: 16rem;
+}
+
+.nav-link {
+  color: #002869;
   font-weight: 600;
 }
 
 #avatar-dropdown {
   border-radius: 0.325rem;
 }
-#avatar-dropdown #sign-out:hover {
+
+.sign-out:hover {
   background-color: rgba(214, 41, 62, 0.1);
   color: #d6293e;
   border-radius: 0.325rem;
 }
-#avatar-dropdown #sign-out:hover i {
+.sign-out:hover i {
   color: #d6293e;
+}
+
+.stat {
+  border-radius: 11px;
+  height: 120px;
+}
+
+.stat-heart {
+  padding: 0 -12px;
+  background-color: #fef6e0;
+}
+.stat-heart i {
+  color: #f7c32e;
+}
+
+.stat-coin {
+  background-color: #e8ebed;
+}
+.stat-coin i {
+  color: #1d3b53;
+}
+
+.stat-reviews {
+  background-color: #f0ebf9;
+}
+.stat-reviews i {
+  color: #6f42c1;
+}
+
+.stat-members {
+  background-color: #e7f6f8;
+}
+.stat-members i {
+  color: #17a2b8;
 }
 
 /* ----- Heading 1 - 6 & Paragraphs ----- */

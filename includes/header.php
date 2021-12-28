@@ -36,7 +36,7 @@ global $title;
            <!-- Collapsing Navigation Links -->
            <div class="collapse navbar-collapse w-100" id="navbarCollapse">
                <!--Dropdown Category Menu -->
-               <ul class="navbar-nav me-auto ">
+               <ul id="categories-menu" class="navbar-nav me-auto rounded-3">
                    <li class="nav-item dropdown rounded-3 border">
                        <a class="nav-link "
                           href="#"
@@ -60,34 +60,62 @@ global $title;
                <!-- Main Menu -->
                <ul class="navbar-nav navbar-nav-scroll me-auto ">
                    <li class="nav-item">
-                       <a href="index.php" class="nav-link">Home</a>
+                       <a href="index.php" class="nav-link"><i class="bi bi-house"></i> Home</a>
                    </li><!--Home END-->
-                   <!--Dropdown Menu-->
+                   <li class="nav-item">
+                       <a href="news.php" class="nav-link"><i class="bi bi-newspaper"></i> News</a>
+                   </li><!--News END-->
                    <li class="nav-item dropdown">
                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                           +Add
+                           <i class="bi bi-plus-lg"></i> Add
                        </a>
                        <!--Dropdown Menu Links -->
                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                           <li><a class="dropdown-item" href="#">PTC</a></li>
-                           <li><a class="dropdown-item" href="#">Revenue Shares</a></li>
+                           <li><a class="dropdown-item" href="add_new_ad.php"><i class="bi bi-badge-ad"></i> New Ad</a></li>
+                           <li><a class="dropdown-item" href="add_new_investment.php"><i class="bi bi-clipboard-data"></i> New Project</a></li>
+                           <li><a class="dropdown-item" href="add_new_post.php"><i class="bi bi-pencil-square"></i> Blog Post</a></li>
                        </ul>
-
                    </li><!--Category Dropdown END -->
                    <li class="nav-item">
-                       <a href="login.php" class="nav-link">Login</a>
+                       <a href="login.php" class="nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
                    </li><!--Login END-->
                    <li class="nav-item">
-                       <a href="register.php" class="nav-link">Register</a>
+                       <a href="register.php" class="nav-link"><i class="bi bi-person-plus"></i> Register</a>
                    </li><!--Register END-->
+                   <li class="nav-item">
+                       <a href="contact_us.php" class="nav-link"><i class="bi bi-life-preserver"></i> Support</a>
+                   </li><!--Contact us END-->
+                   <li class="nav-item">
+                       <a href="includes/logout.php" class="nav-link"><i class="bi bi-box-arrow-left"></i> Logout</a>
+                   </li><!--Log out END-->
 
-               </ul><!-- Nav Links END -->
-
-               <!--Live Search Input -->
-               <form class="d-flex">
-                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                   <button class="btn btn-outline-success" type="submit">Search</button>
-               </form><!--Live Search END -->
+               </ul>
+               <!--Live Search -->
+               <div class="nav my-3 my-xl-0 px-4 align-items-center">
+                   <div class="nav-item w-100">
+                       <!--Live Search icon & input START-->
+                       <form class="rounded border border-1 position-relative">
+                           <div class="input-group ">
+                               <!-- Search Icon Button -->
+                               <span class="input-group-text border-0 pe-1 bg-white">
+                                 <i class="bi bi-search me-1 "></i>
+                            </span>
+                               <!-- Search Input -->
+                               <input id="search" type="text" class="form-control border border-0 px-1 shadow-none ps-3"
+                                      aria-label="Search our blog..." placeholder="Search..." onkeyup="showResult(this.value)">
+                           </div>
+                       </form>
+                       <!--Live Search icon & input END-->
+                   </div>
+                   <!--Displaying Search Results START-->
+                   <div class="container">
+                       <div class="row">
+                           <div class="col position-relative">
+                               <div class="position-absolute bg-white rounded-bottom" id="live-search"></div>
+                           </div>
+                       </div>
+                   </div>
+               </div>
 
            </div>
 
@@ -105,7 +133,7 @@ global $title;
                         alt="Avatar"
                         loading="lazy" />
                </a>
-               <ul class="dropdown-menu dropdown-animation dropdown-menu-end  shadow"
+               <ul class="dropdown-menu dropdown-menu-end shadow"
                    aria-labelledby="navbarDropdownMenu"
                    id="avatar-dropdown">
                    <!-- Avatar img, Names & Email-->
@@ -131,7 +159,7 @@ global $title;
                        <a href="profile_settings.php" class="dropdown-item"><i class="bi bi-gear fa-fw me-2"></i>Profile Settings</a>
                    </li>
                    <li>
-                       <a href="logout.php" id="sign-out" class="dropdown-item"><i class="bi bi-power fa-fw me-2"></i> Sign Out</a>
+                       <a href="logout.php" class="sign-out dropdown-item"><i class="bi bi-power fa-fw me-2"></i> Sign Out</a>
                    </li>
                </ul><!--Avatar End-->
            </div>

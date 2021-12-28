@@ -39,7 +39,7 @@ include ('includes/header.php');
 
                         <!-- Login Link -->
                         <div class="text-center mt-3">
-                            <p>Back To <a href="register.php">Login</a></p>
+                            <p>Back To <a href="login.php">Login</a></p>
                         </div>
 
                     </form>
