@@ -75,27 +75,47 @@ include ('includes/header.php');
                                 </div><!--Dashboard Link END-->
                                 <div class="col-12">
                                     <a href="upgrade.php" class="a-m nav-link border-bottom">
-                                        <i class="bi bi-gem me-2"></i></i>Upgrade Account
+                                        <i class="bi bi-gem me-2"></i>Upgrade Account
                                     </a>
                                 </div><!--Upgrade Link END-->
                                 <div class="col-12">
-                                    <a href="#" class="a-m nav-link border-bottom">
+                                    <a href="contests.php" class="a-m nav-link border-bottom">
+                                        <i class="bi bi-trophy"></i> Activity Contest
+                                    </a>
+                                </div><!--Contest Link END-->
+                                <div class="col-12">
+                                    <a href="earnings.php" class="a-m nav-link border-bottom">
                                         <i class="bi bi-graph-up fa-fw me-2"></i>Earnings
                                     </a>
                                 </div><!--Earnings Link END-->
                                 <div class="col-12">
+                                    <a href="payouts.php" class="a-m nav-link border-bottom">
+                                        <i class="bi bi-wallet2 fa-fw me-2"></i>Payouts</a>
+                                </div><!--Payouts Link END-->
+                                <div class="col-12">
                                     <a href="my_investments.php" class="a-m nav-link border-bottom">
                                         <i class="bi bi-clipboard-data me-2"></i>My Investments</a>
-                                </div>
+                                </div><!--My Investments Link END-->
                                 <div class="col-12">
-                                    <a href="#" class="a-m nav-link border-bottom">Earnings</a>
-                                </div>
+                                    <a href="my_ads.php" class="a-m nav-link border-bottom">
+                                        <i class="bi bi-megaphone me-2"></i>My Ads</a>
+                                </div><!--My Ads Link END-->
                                 <div class="col-12">
-                                    <a href="#" class="a-m nav-link border-bottom">Payouts</a>
-                                </div>
+                                    <a href="affiliate_dashboard.php" class="a-m nav-link border-bottom">
+                                        <i class="bi bi-people me-2"></i>My Referrals</a>
+                                </div><!--Affiliate Dashboard Link END-->
                                 <div class="col-12">
-                                    <a href="#" class="sign-out a-m nav-link border-bottom"><i class="bi bi-trash fa-fw me-2"></i>Delete Account</a>
-                                </div>
+                                    <a href="edit_profile.php" class="a-m nav-link border-bottom">
+                                        <i class="bi bi-gear fa-fw me-2"></i>Settings</a>
+                                </div><!--Edit Profile Link END-->
+                                <div class="col-12">
+                                    <a href="#" class="a-m nav-link border-bottom">
+                                        <i class="bi bi-arrow-repeat me-2"></i>Subscription</a>
+                                </div><!--My Subscription Link END-->
+                                <div class="col-12">
+                                    <a href="#" class="sign-out a-m nav-link border-bottom">
+                                        <i class="bi bi-trash fa-fw me-2"></i>Delete Account</a>
+                                </div><!--Delete account Links -->
                             </div>
                         </div>
                     </div>
@@ -105,16 +125,14 @@ include ('includes/header.php');
             <div class="col-xl-9">
                 <!-- Balance Statistics -->
                 <div class="row g-4">
-
-                    <!-- Earning item -->
+                    <!-- Earnings this month -->
                     <div class="col-sm-6 col-lg-4">
                         <div class="text-center p-4 bg-light rounded-3 shadow-lg">
                             <h6>Earnings this month</h6>
                             <h2 class="mb-0 fs-2 fw-bold">$299.95</h2>
                         </div>
                     </div>
-
-                    <!-- Earning item -->
+                    <!-- Affiliate Earning -->
                     <div class="col-sm-6 col-lg-4">
                         <div class="text-center p-4 bg-light rounded-3 shadow-lg">
                             <h6>Affiliate commissions
@@ -128,8 +146,7 @@ include ('includes/header.php');
                             <h2 class="mb-0 fs-2 fw-bold">$750.35</h2>
                         </div>
                     </div>
-
-                    <!-- Earning item -->
+                    <!-- Lifetime Earnings -->
                     <div class="col-sm-6 col-lg-4">
                         <div class="text-center p-4 bg-light rounded-3 shadow-lg">
                             <h6>Lifetime Earnings</h6>
@@ -143,7 +160,7 @@ include ('includes/header.php');
                     <div class="col-12">
                         <div class="card card-body bg-transparent border p-4 h-100">
                             <div class="row g-4">
-                                <h3>Earned Commissions etc</h3>
+                                <h3>Earned Commissions</h3>
                             </div>
                             <!--Apex Chart-->
 

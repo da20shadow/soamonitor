@@ -1,8 +1,8 @@
 <?php
 $db_host = "localhost";
-$db_user = "root";
-$db_password = "";
-$db_name = "blog";
+$db_user = "root"; //u843684511_username
+$db_password = ""; //zQ77D/]G!Pt]
+$db_name = "blog"; //u843684511_database
 $charset = "utf8mb4";
 
 $dsn = "mysql:host=$db_host;dbname=$db_name;charset=$charset";

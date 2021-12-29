@@ -55,10 +55,9 @@ include ('includes/header.php');
         <div class="row">
             <!--Left Sidebar -->
             <div class="col-xl-3">
-
                 <nav class="navbar navbar-expand-md">
                     <div class="container px-1 px-xl-2 mx-0">
-                        <button class="navbar-toggler m-auto collapsed my-3" type="button"
+                        <button class="navbar-toggler m-auto collapsed my-3 w-100 bg-light border-3 border-dark shadow" type="button"
                                 data-bs-toggle="collapse"
                                 data-bs-target="#sideBarCollapse"
                                 aria-controls="sideBarCollapse"
@@ -69,13 +68,13 @@ include ('includes/header.php');
                         <div class="collapse navbar-collapse w-100 p-3 border rounded-3 bg-light shadow" id="sideBarCollapse">
                             <div class="row">
                                 <div class="col-12">
-                                    <a href="account.php" class="a-m nav-link border-bottom">
+                                    <a href="account.php" class="a-m nav-link border-bottom active" aria-current="page">
                                         <i class="bi bi-speedometer2 fa-fw me-2"></i>Dashboard
                                     </a>
                                 </div><!--Dashboard Link END-->
                                 <div class="col-12">
                                     <a href="upgrade.php" class="a-m nav-link border-bottom">
-                                        <i class="bi bi-gem me-2"></i></i>Upgrade Account
+                                        <i class="bi bi-gem me-2"></i>Upgrade Account
                                     </a>
                                 </div><!--Upgrade Link END-->
                                 <div class="col-12">
@@ -93,13 +92,17 @@ include ('includes/header.php');
                                         <i class="bi bi-wallet2 fa-fw me-2"></i>Payouts</a>
                                 </div><!--Payouts Link END-->
                                 <div class="col-12">
-                                    <a href="my_investments.php" class="a-m nav-link border-bottom">
+                                    <a href="my_investments.php" class="a-m nav-link border-bottom active" aria-current="page">
                                         <i class="bi bi-clipboard-data me-2"></i>My Investments</a>
                                 </div><!--My Investments Link END-->
                                 <div class="col-12">
+                                    <a href="my_ads.php" class="a-m nav-link border-bottom">
+                                        <i class="bi bi-megaphone me-2"></i>My Ads</a>
+                                </div><!--My Ads Link END-->
+                                <div class="col-12">
                                     <a href="affiliate_dashboard.php" class="a-m nav-link border-bottom">
                                         <i class="bi bi-people me-2"></i>My Referrals</a>
-                                </div><!--Referrals Link END-->
+                                </div><!--Affiliate Dashboard Link END-->
                                 <div class="col-12">
                                     <a href="edit_profile.php" class="a-m nav-link border-bottom">
                                         <i class="bi bi-gear fa-fw me-2"></i>Settings</a>
@@ -111,7 +114,7 @@ include ('includes/header.php');
                                 <div class="col-12">
                                     <a href="#" class="sign-out a-m nav-link border-bottom">
                                         <i class="bi bi-trash fa-fw me-2"></i>Delete Account</a>
-                                </div>
+                                </div><!--Delete account Links -->
                             </div>
                         </div>
                     </div>
@@ -119,7 +122,7 @@ include ('includes/header.php');
             </div>
             <!--Main Content -->
             <div class="col-xl-9">
-                <!-- Balance Statistics -->
+                <!-- Points, Account Balance Statistics -->
                 <div class="row g-4">
                     <div class="col-sm-6 col-lg-4">
                         <div class="stat stat-heart d-flex justify-content-center align-items-center shadow-sm">
@@ -133,7 +136,7 @@ include ('includes/header.php');
                                 <button class="btn btn-warning btn-sm shadow-sm">Convert Points</button>
                             </div>
                         </div>
-                    </div>
+                    </div><!--Points Balance END-->
                     <div class="col-sm-6 col-lg-4">
                         <div class="stat stat-reviews d-flex justify-content-center align-items-center
             shadow-sm">
@@ -147,7 +150,7 @@ include ('includes/header.php');
                                 <h5>Account Balance</h5>
                             </div>
                         </div>
-                    </div>
+                    </div><!--Account Balance-->
                     <div class="col-sm-6 col-lg-4">
                         <div class="stat stat-members d-flex justify-content-center align-items-center
             shadow-sm">
@@ -161,17 +164,27 @@ include ('includes/header.php');
                                 <h5>Referrals</h5>
                             </div>
                         </div>
-                    </div>
+                    </div><!--Total Referrals-->
                 </div>
-                <!-- Chart -->
+                <!-- Ref Link -->
                 <div class="row mt-5">
                     <div class="col-12">
                         <div class="card card-body bg-transparent border p-4 h-100">
-                            <div class="row g-4">
-                                <h3><strong>Referral Link:</strong> https://soamonitor.com/registration.php?ref=9 <button class="btn btn-primary">Copy</button></h3>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text fw-bold">Referral Link:</span>
+                                <input onclick="select()" type="text" name="ref-Url" class="form-control bg-white shadow-none" id="ref-Url"
+                                       value="https://soamonitor.com/registration.php?ref=9"
+                                       readonly >
+                                <button onclick="copyFunc()" class="btn btn-primary"
+                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-trigger="click"
+                                        title="Copied!" id="btn-copy">Copy</button>
+                            </div><!-- Ref Link -->
+                            <!--Short Points info Chart-->
+                            <div class="row">
+                                <h4 class="text-center fw-bold">VIP Members -> 1000 points = $1</h4>
+                                <h4 class="text-center fw-bold">Free Members -> 1000 points = $0,20</h4>
                             </div>
-                            <!--Apex Chart-->
-
                         </div>
                     </div>
                 </div>

@@ -75,28 +75,47 @@ include ('includes/header.php');
                                 </div><!--Dashboard Link END-->
                                 <div class="col-12">
                                     <a href="upgrade.php" class="a-m nav-link border-bottom">
-                                        <i class="bi bi-gem me-2"></i></i>Upgrade Account
+                                        <i class="bi bi-gem me-2"></i>Upgrade Account
                                     </a>
                                 </div><!--Upgrade Link END-->
+                                <div class="col-12">
+                                    <a href="contests.php" class="a-m nav-link border-bottom">
+                                        <i class="bi bi-trophy"></i> Activity Contest
+                                    </a>
+                                </div><!--Contest Link END-->
                                 <div class="col-12">
                                     <a href="earnings.php" class="a-m nav-link border-bottom">
                                         <i class="bi bi-graph-up fa-fw me-2"></i>Earnings
                                     </a>
                                 </div><!--Earnings Link END-->
                                 <div class="col-12">
+                                    <a href="payouts.php" class="a-m nav-link border-bottom">
+                                        <i class="bi bi-wallet2 fa-fw me-2"></i>Payouts</a>
+                                </div><!--Payouts Link END-->
+                                <div class="col-12">
                                     <a href="my_investments.php" class="a-m nav-link border-bottom">
                                         <i class="bi bi-clipboard-data me-2"></i>My Investments</a>
                                 </div><!--My Investments Link END-->
                                 <div class="col-12">
-                                    <a href="#" class="a-m nav-link border-bottom">Subscription</a>
-                                </div><!--My Subscription Link END-->
+                                    <a href="my_ads.php" class="a-m nav-link border-bottom">
+                                        <i class="bi bi-megaphone me-2"></i>My Ads</a>
+                                </div><!--My Ads Link END-->
+                                <div class="col-12">
+                                    <a href="affiliate_dashboard.php" class="a-m nav-link border-bottom">
+                                        <i class="bi bi-people me-2"></i>My Referrals</a>
+                                </div><!--Affiliate Dashboard Link END-->
+                                <div class="col-12">
+                                    <a href="edit_profile.php" class="a-m nav-link border-bottom">
+                                        <i class="bi bi-gear fa-fw me-2"></i>Settings</a>
+                                </div><!--Edit Profile Link END-->
                                 <div class="col-12">
                                     <a href="#" class="a-m nav-link border-bottom">
-                                        <i class="bi bi-wallet2 fa-fw me-2"></i>Payouts</a>
-                                </div><!--Payouts Link END-->
+                                        <i class="bi bi-arrow-repeat me-2"></i>Subscription</a>
+                                </div><!--My Subscription Link END-->
                                 <div class="col-12">
-                                    <a href="#" class="sign-out a-m nav-link border-bottom"><i class="bi bi-trash fa-fw me-2"></i>Delete Account</a>
-                                </div>
+                                    <a href="#" class="sign-out a-m nav-link border-bottom">
+                                        <i class="bi bi-trash fa-fw me-2"></i>Delete Account</a>
+                                </div><!--Delete account Links -->
                             </div>
                         </div>
                     </div>
@@ -107,45 +126,74 @@ include ('includes/header.php');
             <div class="col-xl-9">
                 <!-- Balance Statistics -->
                 <div class="row g-4">
+                    <!-- Available Balance -->
                     <div class="col-sm-6 col-lg-4">
-                        <div class="stat stat-heart d-flex justify-content-center align-items-center shadow-sm">
-                            <span class="display-4">
-                                <i class="bi bi-heart"></i>
-                            </span>
-                            <div class="ms-4 h6 fw-normal">
-                                <div class="d-flex align-items-center">
-                                    <h4 class="mb-0 fw-bold">4.8</h4>
-                                    <h4 class="mb-0 fw-bold">K</h4>
-                                </div>
-                                <h5>Subscribers</h5>
-                            </div>
+                        <div class="text-center p-4 bg-light rounded-3 shadow-lg">
+                            <h6>Balance</h6>
+                            <h2 class="mb-0 fs-2 fw-bold">$199.95</h2>
+                            <button class="btn btn-primary btn-sm mt-2"
+                                    data-bs-toggle="modal" data-bs-target="#withdrawal">
+                                <i class="bi bi-cash-coin me-2"></i>Withdraw Earning
+                            </button>
                         </div>
                     </div>
+                    <!-- Paid This month -->
                     <div class="col-sm-6 col-lg-4">
-                        <div class="stat stat-reviews d-flex justify-content-center align-items-center
-            shadow-sm">
-                            <span class="display-4">
-                                <i class="bi bi-cash-coin"></i>
-                            </span>
-                            <div class="ms-4 h6 fw-normal">
-                                <div class="d-flex align-items-center">
-                                    <h4 class="mb-0 fw-bold">$213.32</h4>
-                                </div>
-                                <h5>Paid in Contests</h5>
-                            </div>
+                        <div class="text-center p-4 bg-light rounded-3 shadow-lg">
+                            <h6>Paid Last Month</h6>
+                            <h2 class="mb-0 fs-2 fw-bold">$750.35</h2>
                         </div>
                     </div>
+                    <!-- Lifetime Paid -->
                     <div class="col-sm-6 col-lg-4">
-                        <div class="stat stat-members d-flex justify-content-center align-items-center
-            shadow-sm">
-                            <span class="display-4">
-                                <i class="bi bi-people"></i>
-                            </span>
-                            <div class="ms-4 h6 fw-normal">
-                                <div class="d-flex align-items-center">
-                                    <h4 class="mb-0 fw-bold">12</h4>
+                        <div class="text-center p-4 bg-light rounded-3 shadow-lg">
+                            <h6>Total Paid</h6>
+                            <h2 class="mb-0 fs-2 fw-bold">$4882.65</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- Request Withdrawal Modal -->
+                <div class="modal fade" id="withdrawal" tabindex="-1"
+                     aria-labelledby="withdrawal" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Request Withdrawal</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card-body">
+                                    <form action="includes/login.inc.php" method="post"
+                                          class="needs-validation was-validated"
+                                          onsubmit="return withdrawalFormValidation()">
+                                        <div class="m-2">
+                                            <label class="form-label" for="withdrawalAmount">Project Name</label>
+                                            <input class="form-control" type="number"
+                                                   name="withdrawalAmount" placeholder="Min: $5"
+                                                   pattern="^([1-9]{1,3})$"
+                                                   id="withdrawalAmount" required="required"/>
+                                            <div class="invalid-feedback">Enter Withdrawal Amount ($5,$10 etc.)!</div>
+                                            <div class="valid-feedback">Good!</div>
+                                        </div><!-- Withdrawal Amount END-->
+                                        <div class="m-2">
+                                            <select class="form-select" required aria-label="select">
+                                                <option value="">Choose Payment Processor...</option>
+                                                <option value="1">PerfectMoney</option>
+                                                <option value="2">Payeer</option>
+                                                <option value="3">LTC</option>
+                                                <option value="4">Doge</option>
+                                            </select>
+                                            <div class="invalid-feedback">Select Payment Processor!</div>
+                                            <div class="valid-feedback">OK!</div>
+                                        </div><!-- Select Payment Processor END-->
+                                        <div class="row g-2 my-1">
+                                            <button type="submit" name="add" class="btn btn-success ">Withdrawal</button>
+                                        </div><!-- Withdrawal Button END-->
+                                    </form>
                                 </div>
-                                <h5>Members</h5>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
                             </div>
                         </div>
                     </div>
@@ -220,6 +268,26 @@ include ('includes/header.php');
                                             </tbody>
                                             <!-- Table body END -->
                                         </table>
+                                        <!--Pagination-->
+                                        <div class="my-3">
+                                            <nav aria-label="Page navigation example">
+                                                <ul class="pagination justify-content-center">
+                                                    <li class="page-item disabled">
+                                                        <a class="page-link" href="#" aria-label="Previous">
+                                                            <span aria-hidden="true">&laquo;</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#" aria-label="Next">
+                                                            <span aria-hidden="true">&raquo;</span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
                                     </div>
                                     <!-- Payout list table END -->
 

@@ -11,8 +11,8 @@ global $title;
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="../assets/css/style.css" type="text/css">
-    <link rel="icon" href="../img/icons/fav.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/assets/css/style.css" type="text/css">
+    <link rel="icon" href="/assets/img/icons/fav.ico" type="image/x-icon" />
     <title><?php echo htmlspecialchars($title); ?></title>
 </head>
 <body>
@@ -25,7 +25,7 @@ global $title;
                <img src="assets/img/logo.png" alt="Logo" style="width:160px; height:30px;"
                class="light-mode-item navbar-brand-item">
            </a>
-           <!-- Open Menu Button For Small Screens -->
+           <!-- Open Navigation Menu Button For Small Screens -->
            <button class="navbar-toggler ms-auto collapsed" type="button"
                    data-bs-toggle="collapse"
                    data-bs-target="#navbarCollapse"
@@ -33,11 +33,11 @@ global $title;
                    aria-expanded="false" aria-label="Toggle navigation">
                <i class="bi bi-list"></i>
            </button>
-           <!-- Collapsing Navigation Links -->
+           <!-- Collapsable Navigation -->
            <div class="collapse navbar-collapse w-100" id="navbarCollapse">
                <!--Dropdown Category Menu -->
-               <ul id="categories-menu" class="navbar-nav me-auto rounded-3">
-                   <li class="nav-item dropdown rounded-3 border">
+               <div id="categories-menu" class="navbar-nav me-auto rounded-3">
+                   <div class="nav-item dropdown rounded-3 border">
                        <a class="nav-link "
                           href="#"
                           id="navbarDropdownMenuLink"
@@ -47,49 +47,36 @@ global $title;
                            <i class="bi bi-ui-radios-grid"></i><span> Category</span>
                        </a>
                        <!-- Links -->
-                       <ul class="dropdown-menu shadow-lg"
-                           aria-labelledby="navbarDropdownMenuLink">
-                           <li><a class="dropdown-item " href="#"><i class="bi bi-mouse2"></i> PTC sites</a></li>
-                           <li><a class="dropdown-item " href="#"><i class="bi bi-pie-chart"></i> Revenue Share Sites</a></li>
-                           <li><a class="dropdown-item " href="#"><i class="bi bi-minecart-loaded"></i> Cloud Mining sites</a></li>
-                           <li><hr class="dropdown-divider"></li>
-                           <li><a class="dropdown-item" href="#">All Categories</a></li>
-                       </ul>
-                   </li>
-               </ul>
+                       <div class="dropdown-menu shadow-lg" aria-labelledby="navbarDropdownMenuLink">
+                           <a class="dropdown-item " href="#"><i class="bi bi-mouse2"></i> PTC sites</a>
+                           <a class="dropdown-item " href="#"><i class="bi bi-pie-chart"></i> Revenue Share Sites</a>
+                           <a class="dropdown-item " href="#"><i class="bi bi-minecart-loaded"></i> Cloud Mining sites</a>
+                           <hr class="dropdown-divider">
+                           <a class="dropdown-item" href="#">All Categories</a>
+                       </div>
+                   </div>
+               </div>
                <!-- Main Menu -->
-               <ul class="navbar-nav navbar-nav-scroll me-auto ">
-                   <li class="nav-item">
-                       <a href="index.php" class="nav-link"><i class="bi bi-house"></i> Home</a>
-                   </li><!--Home END-->
-                   <li class="nav-item">
-                       <a href="news.php" class="nav-link"><i class="bi bi-newspaper"></i> News</a>
-                   </li><!--News END-->
-                   <li class="nav-item dropdown">
-                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               <div class="navbar-nav navbar-nav-scroll me-auto ">
+                   <a href="index.php" class="nav-link"><i class="bi bi-house"></i> Home</a>
+                   <a href="news.php" class="nav-link"><i class="bi bi-newspaper"></i> News</a>
+                   <div class="nav-item dropdown">
+                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                          data-bs-toggle="dropdown" aria-expanded="false">
                            <i class="bi bi-plus-lg"></i> Add
                        </a>
                        <!--Dropdown Menu Links -->
-                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                           <li><a class="dropdown-item" href="add_new_ad.php"><i class="bi bi-badge-ad"></i> New Ad</a></li>
-                           <li><a class="dropdown-item" href="add_new_investment.php"><i class="bi bi-clipboard-data"></i> New Project</a></li>
-                           <li><a class="dropdown-item" href="add_new_post.php"><i class="bi bi-pencil-square"></i> Blog Post</a></li>
-                       </ul>
-                   </li><!--Category Dropdown END -->
-                   <li class="nav-item">
-                       <a href="login.php" class="nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
-                   </li><!--Login END-->
-                   <li class="nav-item">
-                       <a href="register.php" class="nav-link"><i class="bi bi-person-plus"></i> Register</a>
-                   </li><!--Register END-->
-                   <li class="nav-item">
-                       <a href="contact_us.php" class="nav-link"><i class="bi bi-life-preserver"></i> Support</a>
-                   </li><!--Contact us END-->
-                   <li class="nav-item">
-                       <a href="includes/logout.php" class="nav-link"><i class="bi bi-box-arrow-left"></i> Logout</a>
-                   </li><!--Log out END-->
-
-               </ul>
+                       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                           <a class="dropdown-item" href="add_new_ad.php"><i class="bi bi-badge-ad"></i> New Ad</a>
+                           <a class="dropdown-item" href="add_new_investment.php"><i class="bi bi-clipboard-data"></i> New Project</a>
+                           <a class="dropdown-item" href="add_new_post.php"><i class="bi bi-pencil-square"></i> Blog Post</a>
+                       </div>
+                   </div><!--Add New ad, post.. Dropdown END -->
+                   <a href="login.php" class="nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
+                   <a href="register.php" class="nav-link"><i class="bi bi-person-plus"></i> Register</a>
+                   <a href="contact_us.php" class="nav-link"><i class="bi bi-life-preserver"></i> Support</a>
+                   <a href="includes/logout.php" class="nav-link"><i class="bi bi-box-arrow-left"></i> Logout</a>
+               </div>
                <!--Live Search -->
                <div class="nav my-3 my-xl-0 px-4 align-items-center">
                    <div class="nav-item w-100">
@@ -116,9 +103,7 @@ global $title;
                        </div>
                    </div>
                </div>
-
            </div>
-
            <!-- Avatar -->
            <div class="dropdown ms-1 ms-lg-0">
                <a class="position-relative p-0 d-inline-block"
@@ -133,11 +118,11 @@ global $title;
                         alt="Avatar"
                         loading="lazy" />
                </a>
-               <ul class="dropdown-menu dropdown-menu-end shadow"
+               <div class="dropdown-menu dropdown-menu-end shadow"
                    aria-labelledby="navbarDropdownMenu"
                    id="avatar-dropdown">
                    <!-- Avatar img, Names & Email-->
-                   <li class="px-3 pt-3">
+                   <div class="px-3 pt-3">
                        <div class="d-flex align-items-center">
                            <div class="avatar me-3">
                                <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
@@ -150,22 +135,16 @@ global $title;
                            </div>
                        </div>
                        <hr>
-                   </li>
+                   </div>
                    <!-- Dropdown Menu Links-->
-                   <li>
-                       <a href="account.php" class="dropdown-item"><i class="bi bi-speedometer2 fa-fw me-2"></i>Dashboard</a>
-                   </li>
-                   <li>
-                       <a href="profile_settings.php" class="dropdown-item"><i class="bi bi-gear fa-fw me-2"></i>Profile Settings</a>
-                   </li>
-                   <li>
-                       <a href="logout.php" class="sign-out dropdown-item"><i class="bi bi-power fa-fw me-2"></i> Sign Out</a>
-                   </li>
-               </ul><!--Avatar End-->
+                   <a href="account.php" class="dropdown-item"><i class="bi bi-speedometer2 fa-fw me-2"></i>Dashboard</a>
+                   <a href="edit_profile.php" class="dropdown-item"><i class="bi bi-gear fa-fw me-2"></i>Profile Settings</a>
+                   <a href="logout.php" class="sign-out dropdown-item"><i class="bi bi-power fa-fw me-2"></i> Sign Out</a>
+
+               </div><!--Avatar End-->
            </div>
 
        </div>
     </nav>
-
 </header>
 

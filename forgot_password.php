@@ -17,18 +17,15 @@ include ('includes/header.php');
 
                     <form action="includes/reset_password.inc.php" method="post"
                           class="needs-validation was-validated">
-
                         <!-- Email -->
                         <div class="mb-2">
-
                             <label class="form-label" for="resetPassword">Email</label>
                             <input class="form-control" type="email" name="email" placeholder="Email"
                                    pattern="^([a-zA-Z0-9_.-])+@([a-zA-Z])+[.]([a-zA-Z]{2,4})+$"
                                    id="resetPassword" required="required"/>
 
-                            <div id="resetPasswordEmailErrorMessage" class="invalid-feedback">
-                                Enter Email!
-                            </div>
+                            <div class="invalid-feedback">Enter Email!</div>
+                            <div class="valid-feedback">Good!</div>
 
                         </div><!-- Email END-->
 

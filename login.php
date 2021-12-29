@@ -20,30 +20,25 @@ include ('includes/header.php');
                           onsubmit="return regFormValidation()">
 
                         <!-- Email -->
-                        <div class="mb-2">
+                        <div class="mb-1">
 
                             <label class="form-label" for="loginEmail">Email</label>
                             <input class="form-control" type="email" name="email" placeholder="Email"
                                    pattern="^([a-zA-Z0-9_.-])+@([a-zA-Z])+[.]([a-zA-Z]{2,4})+$"
                                    id="loginEmail" required="required"/>
-
-                            <div id="emailErrorMessage" class="invalid-feedback">
-                                Enter Email!
-                            </div>
+                            <div class="invalid-feedback">Enter Email!</div>
+                            <div class="valid-feedback">Good!</div>
 
                         </div><!-- Email END-->
 
                         <!-- Password -->
-                        <div class="mb-2">
+                        <div class="mb-1">
 
                             <label class="form-label" for="loginPassword">Password</label>
                             <input class="form-control" type="password" name="password" placeholder="Password"
                                    id="loginPassword" required="required"/>
-
-                            <div id="passwordErrorMessage" class="invalid-feedback">
-                                Enter Password!
-                            </div>
-
+                            <div id="passwordErrorMessage" class="invalid-feedback">Enter Password!</div>
+                            <div class="valid-feedback">Good!</div>
                         </div><!-- Password END-->
 
                         <!-- Login Button-->
