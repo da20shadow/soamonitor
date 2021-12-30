@@ -18,7 +18,7 @@
             <!-- Logo and text -->
             <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 <a href="index.php">
-                    <img src="../assets/img/logo.png" alt="SOA monitor Logo" style="width:160px; height:30px; filter: brightness(50%);">
+                    <img src="assets/img/logo.png" alt="SOA monitor Logo" style="width:160px; height:30px; filter: brightness(50%);">
                 </a>
                 <p class="fs-6 my-3">“Join us Now And Learn How We Make A Full-Time Job Working From Home Like A Boss. “</p>
             </div>
@@ -86,6 +86,7 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-<script src="/assets/js/functions.js"></script>
+<script src="assets/js/functions.js"></script>
 </body>
+
 </html>

@@ -14,12 +14,15 @@
   color: #002869;
   padding: 15px;
 }
+
 .projects-table tbody tr {
   border-bottom: 1px solid #e2e3e5;
 }
+
 .projects-table tbody tr:hover {
   background-color: #ebeff3;
 }
+
 .projects-table tbody td {
   padding: 7px 10px;
   font-weight: 600;
@@ -39,11 +42,13 @@ body {
   width: 94%;
   margin: 0 auto;
 }
+
 .dropdown-item:hover {
   background-color: #e5f0fa;
   color: #086bc9;
   border-radius: 0.325rem;
 }
+
 .dropdown-item:hover i {
   color: #086bc9;
 }
@@ -71,6 +76,7 @@ body {
   color: #d6293e;
   border-radius: 0.325rem;
 }
+
 .sign-out:hover i {
   color: #d6293e;
 }
@@ -84,6 +90,7 @@ body {
   padding: 0 -12px;
   background-color: #fef6e0;
 }
+
 .stat-heart i {
   color: #f7c32e;
 }
@@ -91,6 +98,7 @@ body {
 .stat-coin {
   background-color: #e8ebed;
 }
+
 .stat-coin i {
   color: #1d3b53;
 }
@@ -98,6 +106,7 @@ body {
 .stat-reviews {
   background-color: #f0ebf9;
 }
+
 .stat-reviews i {
   color: #6f42c1;
 }
@@ -105,6 +114,7 @@ body {
 .stat-members {
   background-color: #e7f6f8;
 }
+
 .stat-members i {
   color: #17a2b8;
 }
@@ -114,7 +124,7 @@ p {
   font-family: "Heebo", sans-serif;
   font-weight: 500;
   line-height: 1.25;
-  font-size: 1rem;
+  font-size: 1.0rem;
 }
 
 /* ----- Buttons ---- */
@@ -124,11 +134,13 @@ p {
   outline: none;
   border: none;
   border-radius: 5px;
-  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
   margin: 10px auto;
   padding: 10px 20px;
-  font-size: 1rem;
+  font-size: 1.0rem;
 }
+
 .n-btn:hover {
   background-color: #08355e;
 }
@@ -139,17 +151,18 @@ p {
   outline: none;
   border: none;
   border-radius: 5px;
-  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
   margin: 10px auto;
   padding: 10px 20px;
-  font-size: 1rem;
+  font-size: 1.0rem;
   padding: 15px 30px;
   font-size: 1.3rem;
 }
+
 .lg-btn:hover {
   background-color: #08355e;
 }
 
 /* ----- T ----- */
-
 /*# sourceMappingURL=style.css.map */
