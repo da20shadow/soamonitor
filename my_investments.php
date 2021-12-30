@@ -53,9 +53,8 @@ include ('includes/header.php');
     <div class="container">
         <hr class="divider">
         <div class="row">
-            <!--Right Sidebar -->
+            <!--Left Sidebar -->
             <div class="col-xl-3">
-
                 <nav class="navbar navbar-expand-md">
                     <div class="container px-1 px-xl-2 mx-0">
                         <button class="navbar-toggler m-auto collapsed" type="button"
@@ -118,6 +117,10 @@ include ('includes/header.php');
                                     <a href="#" class="sign-out a-m nav-link border-bottom">
                                         <i class="bi bi-trash fa-fw me-2"></i>Delete Account</a>
                                 </div><!--Delete account Links -->
+                                <div class="col-12">
+                                    <a href="includes/logout.php" class="sign-out a-m nav-link border-bottom">
+                                        <i class="bi bi-box-arrow-left me-2"></i>Sign Out</a>
+                                </div><!--Logout Link -->
                             </div>
                         </div>
                     </div>
@@ -153,12 +156,12 @@ include ('includes/header.php');
                 <div class="row mt-5">
                     <div class="col-12">
                         <div class="card card-body bg-light border p-4 h-100 shadow-sm">
-                            <div class="d-flex justify-content-between">
-                                <h3>
+                            <div class="row">
+                                <h3 class="col-12 col-md-9">
                                     <img src="assets/img/icons/investments.ico" alt="Icon" width="38px" height="38px">
                                     My Investments
                                 </h3>
-                                <div>
+                                <div class="col-12 col-md-3">
                                     <a href="add_new_investment.php"
                                        class="btn btn-primary btn-sm ms-5"
                                        data-bs-toggle="modal" data-bs-target="#addProject">
@@ -213,7 +216,7 @@ include ('includes/header.php');
                             </div>
                             <!--Investments List-->
 
-                            <table class="projects-table table-hover">
+                            <table class="projects-table table-hover mt-2">
                                 <thead>
                                 <tr class="shadow-sm">
                                     <th>Project Name</th>

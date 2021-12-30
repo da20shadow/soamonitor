@@ -114,7 +114,11 @@ include ('includes/header.php');
                                 <div class="col-12">
                                     <a href="#" class="sign-out a-m nav-link border-bottom">
                                         <i class="bi bi-trash fa-fw me-2"></i>Delete Account</a>
-                                </div><!--Delete account Links -->
+                                </div><!--Delete account Link -->
+                                <div class="col-12">
+                                    <a href="includes/logout.php" class="sign-out a-m nav-link border-bottom">
+                                        <i class="bi bi-box-arrow-left me-2"></i>Sign Out</a>
+                                </div><!--Logout Link -->
                             </div>
                         </div>
                     </div>
@@ -133,7 +137,8 @@ include ('includes/header.php');
                                 <div class="d-flex align-items-center my-2">
                                     <h4 class="mb-0 fw-bold">75 253</h4>
                                 </div>
-                                <button class="btn btn-warning btn-sm shadow-sm">Convert Points</button>
+                                <button class="btn btn-warning btn-sm shadow-sm"
+                                        data-bs-toggle="modal" data-bs-target="#convertPoints">Convert Points</button>
                             </div>
                         </div>
                     </div><!--Points Balance END-->
@@ -166,27 +171,73 @@ include ('includes/header.php');
                         </div>
                     </div><!--Total Referrals-->
                 </div>
-                <!-- Ref Link -->
+                <!-- Ref Link and points chart info -->
                 <div class="row mt-5">
                     <div class="col-12">
                         <div class="card card-body bg-transparent border p-4 h-100">
                             <div class="input-group mb-3">
-                                <span class="input-group-text fw-bold">Referral Link:</span>
-                                <input onclick="select()" type="text" name="ref-Url" class="form-control bg-white shadow-none" id="ref-Url"
+                                <span class="input-group-text fw-bold">Ref Link:</span>
+                                <input onclick="select()" type="text" name="ref-Url"
+                                       class="form-control bg-white shadow-none" id="ref-Url"
                                        value="https://soamonitor.com/registration.php?ref=9"
                                        readonly >
                                 <button onclick="copyFunc()" class="btn btn-primary"
                                         data-bs-toggle="tooltip" data-bs-placement="top"
                                         data-bs-trigger="click"
                                         title="Copied!" id="btn-copy">Copy</button>
-                            </div><!-- Ref Link -->
-                            <!--Short Points info Chart-->
-                            <div class="row">
-                                <h4 class="text-center fw-bold">VIP Members -> 1000 points = $1</h4>
-                                <h4 class="text-center fw-bold">Free Members -> 1000 points = $0,20</h4>
-                            </div>
+                            </div><!-- Ref Link END-->
+                            <div class="row g-1 mt-3 p-3 border rounded-3">
+                                <div class="col-12 col-md-6 ">
+                                    <h4 class="text-center fw-bold">VIP Members -> 1000 points = $1</h4>
+                                </div>
+                                <div class="col-12 col-md-6 ">
+                                    <h4 class="text-center fw-bold">Free Members -> 1000 points = $0,20</h4>
+                                </div>
+                            </div><!--Short Points info Chart END-->
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Convert Points Modal -->
+    <div class="modal fade" id="convertPoints" tabindex="-1"
+         aria-labelledby="convertPoints" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Convert Points To Cash</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="includes/login.inc.php" method="post"
+                          class="needs-validation was-validated"
+                          onsubmit="return convertPointsFormValidation()">
+
+                        <div class="m-2">
+
+                            <label class="form-label" for="points">Points</label>
+                            <input class="form-control" type="number" name="points" placeholder="min 1000"
+                                   pattern="^([0-9])+$"
+                                   id="points" required="required"/>
+                            <div id="depositErrorMessage" class="invalid-feedback">Enter Amount!</div>
+                            <div id="depositSuccessMessage" class="valid-feedback">OK!</div>
+
+                        </div><!-- Points to convert END-->
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">You will get</span>
+                            <input type="text" class="form-control" 
+                                   aria-label="input" aria-describedby="inputGroup-sizing-default">
+                        </div><!-- points in dollars END-->
+                        <!-- Save Button-->
+                        <div class="row g-2 m-2">
+                            <button type="submit" name="add" class="btn btn-success ">Add</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
