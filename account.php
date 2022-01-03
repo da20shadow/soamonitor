@@ -1,8 +1,38 @@
 <?php
+require_once('core/init.php');
+
+if (isset($_SESSION['username'])){
+    $user_id = $_SESSION['user_id'];
+    $username = $_SESSION['username'];
+
+    $user_id = $getFromFunc->checkInput($user_id);
+    $userInfo = $getFromUser->getUserInfo($user_id);
+
+    $first_name = $userInfo['first_name'];
+    $last_name = $userInfo['last_name'];
+    $membership = $userInfo['membership'];
+    $email = $userInfo['email'];
+    $points = $userInfo['points'];
+    $balance = $userInfo['balance'];
+
+
+    $Referrals = $getFromUser->getTotalReferrals($user_id);
+    $totalReferrals = $Referrals['totalRefs'];
+    $Investments = $getFromUser->getTotalUserInvestments($user_id);
+    $totalInvestments = $Investments['total'];
+
+
 $title = "Account - SOAMonitor.com";
+
 include ('includes/header.php');
 ?>
-<div class="container-fluid p-1"></div>
+
+<div class="container-fluid p-1">
+    <!--Success or error message for converting points -->
+    <div id="convertPointsMessageSuccessOr" class="container">
+
+    </div>
+</div>
 <div class="container mt-4">
     <div class="row">
         <div class="col-12">
@@ -13,28 +43,28 @@ include ('includes/header.php');
                         <div class="avatar">
                             <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Avatar"
                                  class="avatar-img rounded-circle border border-white border-3 shadow"
-                                    width="128px" height="128px">
+                                 width="128px" height="128px">
                         </div>
                     </div>
                     <!--Profile Info -->
                     <div class="col d-md-flex justify-content-between align-items-center mt-4">
                         <div>
                             <h1 class="my-1 fs-4 fw-bold">
-                                Mehmed Syuleyman
+                                <?php echo htmlspecialchars($first_name . " " . $last_name);?>
                                 <i class="bi bi-patch-check-fill text-info small"></i>
                             </h1>
                             <ul class="list-inline mb-0">
                                 <li class="list-inline-item h6 fw-light me-3 mb-1">
                                     <i class="bi bi-gem"></i>
-                                    VIP Member
+                                    <span id="membership"><?php echo htmlspecialchars($membership);?></span> Member
                                 </li>
                                 <li class="list-inline-item h6 fw-light me-3 mb-1">
                                     <i class="bi bi-people text-orange me-2"></i>
-                                    35 Referrals
+                                    <?php echo htmlspecialchars($totalReferrals);?> Referrals
                                 </li>
                                 <li class="list-inline-item h6 fw-light me-3 mb-1">
                                     <i class="bi bi-clipboard-data text-purple me-2"></i>
-                                    7 Projects
+                                    <?php echo htmlspecialchars($totalInvestments);?> Projects
                                 </li>
                             </ul>
                         </div>
@@ -116,7 +146,7 @@ include ('includes/header.php');
                                         <i class="bi bi-trash fa-fw me-2"></i>Delete Account</a>
                                 </div><!--Delete account Link -->
                                 <div class="col-12">
-                                    <a href="includes/logout.php" class="sign-out a-m nav-link border-bottom">
+                                    <a href="logout.php" class="sign-out a-m nav-link border-bottom">
                                         <i class="bi bi-box-arrow-left me-2"></i>Sign Out</a>
                                 </div><!--Logout Link -->
                             </div>
@@ -135,7 +165,7 @@ include ('includes/header.php');
                             </span>
                             <div class="ms-4 h6 fw-normal">
                                 <div class="d-flex align-items-center my-2">
-                                    <h4 class="mb-0 fw-bold">75 253</h4>
+                                    <h4 class="mb-0 fw-bold"><?php echo htmlspecialchars($points);?></h4>
                                 </div>
                                 <button class="btn btn-warning btn-sm shadow-sm"
                                         data-bs-toggle="modal" data-bs-target="#convertPoints">Convert Points</button>
@@ -150,7 +180,7 @@ include ('includes/header.php');
                             </span>
                             <div class="ms-4 h6 fw-normal">
                                 <div class="d-flex align-items-center my-2">
-                                    <h4 class="mb-0 fw-bold">$1,213.32</h4>
+                                    <h4 class="mb-0 fw-bold">$<?php echo htmlspecialchars($balance);?></h4>
                                 </div>
                                 <h5>Account Balance</h5>
                             </div>
@@ -164,7 +194,7 @@ include ('includes/header.php');
                             </span>
                             <div class="ms-4 h6 fw-normal">
                                 <div class="d-flex align-items-center">
-                                    <h4 class="mb-0 fw-bold">35</h4>
+                                    <h4 class="mb-0 fw-bold"><?php echo htmlspecialchars($totalReferrals);?></h4>
                                 </div>
                                 <h5>Referrals</h5>
                             </div>
@@ -179,7 +209,7 @@ include ('includes/header.php');
                                 <span class="input-group-text fw-bold">Ref Link:</span>
                                 <input onclick="select()" type="text" name="ref-Url"
                                        class="form-control bg-white shadow-none" id="ref-Url"
-                                       value="https://soamonitor.com/registration.php?ref=9"
+                                       value="https://soamonitor.com/registration.php?ref=<?php echo htmlspecialchars($username);?>"
                                        readonly >
                                 <button onclick="copyFunc()" class="btn btn-primary"
                                         data-bs-toggle="tooltip" data-bs-placement="top"
@@ -187,12 +217,14 @@ include ('includes/header.php');
                                         title="Copied!" id="btn-copy">Copy</button>
                             </div><!-- Ref Link END-->
                             <div class="row g-1 mt-3 p-3 border rounded-3">
+
                                 <div class="col-12 col-md-6 ">
                                     <h4 class="text-center fw-bold">VIP Members -> 1000 points = $1</h4>
                                 </div>
                                 <div class="col-12 col-md-6 ">
                                     <h4 class="text-center fw-bold">Free Members -> 1000 points = $0,20</h4>
                                 </div>
+
                             </div><!--Short Points info Chart END-->
                         </div>
                     </div>
@@ -210,39 +242,45 @@ include ('includes/header.php');
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="includes/login.inc.php" method="post"
-                          class="needs-validation was-validated"
-                          onsubmit="return convertPointsFormValidation()">
 
+                    <h4 class="text-center text-success" id="convertedPointsSuccess"></h4>
+
+                    <form id="convertPointsForm" method="post"
+                          class="needs-validation was-validated">
+                        <span class="form-control text-center border-bottom-0">You have: <?php echo htmlspecialchars($points);?> Points</span>
                         <div class="m-2">
-
                             <label class="form-label" for="points">Points</label>
-                            <input class="form-control" type="number" name="points" placeholder="min 1000"
-                                   pattern="^([0-9])+$"
-                                   id="points" required="required"/>
-                            <div id="depositErrorMessage" class="invalid-feedback">Enter Amount!</div>
-                            <div id="depositSuccessMessage" class="valid-feedback">OK!</div>
+                            <input class="form-control" type="number" name="points" placeholder="100"
+                                   pattern="^([0-9]){4,20}$"
+                                   id="points" required="required" onkeyup="calculateConvertedPoints(this.value)"/>
+                            <div id="errorPoints" class="invalid-feedback">Enter Amount Of Points!</div>
 
                         </div><!-- Points to convert END-->
+                        <span class="form-control text-center border-bottom-0">You will get:</span>
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-default">You will get</span>
-                            <input type="text" class="form-control" 
-                                   aria-label="input" aria-describedby="inputGroup-sizing-default">
+                            <p id="convertedPoints" class="form-control text-center">Points to $0.00 USD</p>
                         </div><!-- points in dollars END-->
                         <!-- Save Button-->
                         <div class="row g-2 m-2">
-                            <button type="submit" name="add" class="btn btn-success ">Add</button>
+                            <button id="convertPointsBtn" type="submit" name="convert" class="btn btn-success"><i class="bi bi-arrow-repeat me-2"></i>Convert</button>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
+
+
 </section>
 
-<?php include("includes/footer.php"); ?>
+<?php
+    include("includes/footer.php");
+}else{
+    header("Location: login.php");
+}
+?>
+
 

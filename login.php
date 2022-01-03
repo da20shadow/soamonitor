@@ -1,4 +1,10 @@
 <?php
+require_once('core/init.php');
+
+if (isset($_SESSION['username'])){
+    header("Location: account.php");
+}else{
+require_once('includes/login.inc.php');
 $title = "Log in - SOAMonitor.com";
 include ('includes/header.php');
 ?>
@@ -15,9 +21,11 @@ include ('includes/header.php');
 
                 <div class="card-body py-3">
 
-                    <form action="includes/login.inc.php" method="post"
-                          class="needs-validation was-validated"
-                          onsubmit="return regFormValidation()">
+                    <h3 class="text-center text-success"><?php echo htmlspecialchars($message['success']);?></h3>
+                    <h3 class="text-center text-danger"><?php echo htmlspecialchars($message['error']);?></h3>
+
+                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="post"
+                          class="needs-validation was-validated">
 
                         <!-- Email -->
                         <div class="mb-1">
@@ -25,7 +33,8 @@ include ('includes/header.php');
                             <label class="form-label" for="loginEmail">Email</label>
                             <input class="form-control" type="email" name="email" placeholder="Email"
                                    pattern="^([a-zA-Z0-9_.-])+@([a-zA-Z])+[.]([a-zA-Z]{2,4})+$"
-                                   id="loginEmail" required="required"/>
+                                   id="loginEmail" required="required"
+                                   value="<?php echo htmlspecialchars($email);?>"/>
                             <div class="invalid-feedback">Enter Email!</div>
                             <div class="valid-feedback">Good!</div>
 
@@ -36,14 +45,15 @@ include ('includes/header.php');
 
                             <label class="form-label" for="loginPassword">Password</label>
                             <input class="form-control" type="password" name="password" placeholder="Password"
-                                   id="loginPassword" required="required"/>
+                                   id="loginPassword" required="required"
+                                   value="<?php echo htmlspecialchars($password);?>"/>
                             <div id="passwordErrorMessage" class="invalid-feedback">Enter Password!</div>
                             <div class="valid-feedback">Good!</div>
                         </div><!-- Password END-->
 
                         <!-- Login Button-->
                         <div class="d-grid gap-2 my-4">
-                        <button type="submit" name="login" class="btn btn-primary d-block">Login</button>
+                            <button type="submit" name="login" class="btn btn-primary d-block">Login</button>
                         </div><!-- Login Button END -->
 
                         <!-- Forgot Password Link -->
@@ -68,4 +78,10 @@ include ('includes/header.php');
 
 </div>
 
-<?php include("includes/footer.php"); ?>
+<?php
+    include("includes/footer.php");
+}
+?>
+
+
+

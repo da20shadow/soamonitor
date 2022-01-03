@@ -1,4 +1,5 @@
 <?php
+require_once('core/init.php');
 $title = "News & Updates - SOAMonitor.com";
 include ('includes/header.php');
 ?>

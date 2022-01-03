@@ -1,4 +1,6 @@
 <?php
+require_once('core/init.php');
+if (isset($_SESSION['username'])){
 $title = "Account - SOAMonitor.com";
 include ('includes/header.php');
 ?>
@@ -303,5 +305,10 @@ include ('includes/header.php');
     </div>
 </section>
 
-<?php include("includes/footer.php"); ?>
+<?php
+include("includes/footer.php");
+}else{
+    header("Location: login.php");
+}
+?>
 

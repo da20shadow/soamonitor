@@ -1,4 +1,9 @@
-<?php echo "LOGO";?>
+<?php
+require_once('core/init.php');
+
+echo "LOGO";
+
+?>
 
     <div class="container">
 

@@ -1,8 +1,14 @@
 <?php
+require_once('core/init.php');
+if (isset($_SESSION['username'])){
+$user_id = $getFromFunc->checkInput($_SESSION['user_id']);
+
 $title = "My Investments - SOAMonitor.com";
 include ('includes/header.php');
 ?>
-<div class="container-fluid p-1"></div>
+<div class="container-fluid p-1">
+    <h2 id="theResult"></h2>
+</div>
 <div class="container mt-4">
     <div class="row">
         <div class="col-12">
@@ -118,7 +124,7 @@ include ('includes/header.php');
                                         <i class="bi bi-trash fa-fw me-2"></i>Delete Account</a>
                                 </div><!--Delete account Links -->
                                 <div class="col-12">
-                                    <a href="includes/logout.php" class="sign-out a-m nav-link border-bottom">
+                                    <a href="logout.php" class="sign-out a-m nav-link border-bottom">
                                         <i class="bi bi-box-arrow-left me-2"></i>Sign Out</a>
                                 </div><!--Logout Link -->
                             </div>
@@ -130,25 +136,33 @@ include ('includes/header.php');
             <div class="col-xl-9">
                 <!-- Investment Statistics -->
                 <div class="row g-4">
+                    <?php
+                    $userInvestments = $getFromProject->getTotalInvestmentsByInvestorID($user_id);
+                    $userWithdrawalInvestment = $getFromProject->getTotalWithdrawalByInvestorID($user_id);
+                    $totalInvested = $userInvestments['totalInvested'];
+                    $totalWithdrawal = $userWithdrawalInvestment['totalWithdrawal'];
+                    $profitLoss = $totalWithdrawal - $totalInvested;
+                    ?>
                     <!-- Total Deposits -->
                     <div class="col-sm-6 col-lg-4">
                         <div class="text-center p-4 bg-light rounded-3 shadow-lg">
                             <h6>Total Deposits</h6>
-                            <h2 class="mb-0 fs-2 fw-bold">$299.95</h2>
+                            <h2 class="mb-0 fs-2 fw-bold">$<?php echo htmlspecialchars($totalInvested);?></h2>
                         </div>
                     </div>
                     <!-- Total Withdrawals -->
                     <div class="col-sm-6 col-lg-4">
                         <div class="text-center p-4 bg-light rounded-3 shadow-lg">
                             <h6>Total Withdrawals</h6>
-                            <h2 class="mb-0 fs-2 fw-bold">$750.35</h2>
+                            <h2 class="mb-0 fs-2 fw-bold">$ <?php echo htmlspecialchars($totalWithdrawal);?></h2>
                         </div>
                     </div>
                     <!-- Total Profit Loss -->
                     <div class="col-sm-6 col-lg-4">
                         <div class="text-center p-4 bg-light rounded-3 shadow-lg">
                             <h6>Lifetime Profit/Loss</h6>
-                            <h2 class="mb-0 fs-2 fw-bold">$482.65</h2>
+                            <h2 class="mb-0 fs-2 fw-bold <?php if ($profitLoss < 0){echo htmlspecialchars('text-danger');}
+                            else{echo htmlspecialchars('text-success');}?>">$<?php echo htmlspecialchars($profitLoss);?></h2>
                         </div>
                     </div>
                 </div>
@@ -162,60 +176,13 @@ include ('includes/header.php');
                                     My Investments
                                 </h3>
                                 <div class="col-12 col-md-3">
-                                    <a href="add_new_investment.php"
-                                       class="btn btn-primary btn-sm ms-5"
-                                       data-bs-toggle="modal" data-bs-target="#addProject">
-                                        <i class="bi bi-plus-lg me-2"></i> Add New Project</a>
+                                    <button class="btn btn-primary btn-sm ms-5"
+                                       data-bs-toggle="modal" data-bs-target="#addProjectModal">
+                                        <i class="bi bi-plus-lg me-2"></i> Add New Project
+                                    </button>
                                 </div><!--Add New Investment Button -->
-                                <!-- Add New Investment Modal -->
-                                <div class="modal fade" id="addProject" tabindex="-1"
-                                     aria-labelledby="addProject" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title"> Add New Investment</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="card-body py-3">
-                                                    <form action="includes/login.inc.php" method="post"
-                                                          class="needs-validation was-validated"
-                                                          onsubmit="return addInvestmentFormValidation()">
-
-                                                        <div>
-
-                                                            <label class="form-label" for="projectName">Project Name</label>
-                                                            <input class="form-control" type="text" name="project_name" placeholder="Project Name"
-                                                                   pattern="^([a-zA-Z0-9_ ]{5,45})$"
-                                                                   id="projectName" required="required"/>
-
-                                                            <div class="invalid-feedback">Enter Project Name!</div>
-                                                            <div class="valid-feedback">Good!</div>
-
-                                                        </div><!-- Project Name END-->
-                                                        <div>
-                                                            <label class="form-label" for="deposit">Deposit</label>
-                                                            <input class="form-control" type="number" step="0.01" name="deposit" placeholder="$120.00"
-                                                                   id="deposit" required="required"/>
-                                                            <div class="invalid-feedback">Enter Deposit!</div>
-                                                            <div class="valid-feedback">Good!</div>
-                                                        </div><!-- Deposit END-->
-                                                        <!-- Add Button-->
-                                                        <div class="row g-2 my-1">
-                                                            <button type="submit" name="add" class="btn btn-success ">Add</button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                             <!--Investments List-->
-
                             <table class="projects-table table-hover mt-2">
                                 <thead>
                                 <tr class="shadow-sm">
@@ -226,28 +193,11 @@ include ('includes/header.php');
                                     <th>Action</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                <tr class="align-items-center">
-                                    <td>Name</td>
-                                    <td>$124</td>
-                                    <td>$154</td>
-                                    <td>$30</td>
-                                    <td>
-                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProject">Edit</button>
-                                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteProject">Delete</button>
-                                    </td>
-                                </tr>
-                                <tr class="align-items-center">
-                                    <td>Name 2</td>
-                                    <td>$1243</td>
-                                    <td>$1524</td>
-                                    <td>$330</td>
-                                    <td>
-                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProject">Edit</button>
-                                        <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteProject">Delete</button>
-                                    </td>
-                                </tr>
+
+                                <tbody id="investmentsList">
+
                                 </tbody>
+
                             </table>
                             <!--Pagination-->
                             <div class="my-3">
@@ -269,72 +219,6 @@ include ('includes/header.php');
                                     </ul>
                                 </nav>
                             </div>
-                            <!-- Edit Modal -->
-                            <div class="modal fade" id="editProject" tabindex="-1"
-                                 aria-labelledby="editProject" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Add New Deposit/Withdrawal</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form action="includes/login.inc.php" method="post"
-                                                  class="needs-validation was-validated"
-                                                  onsubmit="return addDepositWtihdrawalFormValidation()">
-
-                                                <div class="m-2">
-
-                                                    <label class="form-label" for="deposit">Amount</label>
-                                                    <input class="form-control" type="number" step="0.01" name="deposit" placeholder="$120.00"
-                                                           id="deposit" required="required"/>
-
-                                                    <div id="depositErrorMessage" class="invalid-feedback">Enter Amount!</div>
-                                                    <div id="depositSuccessMessage" class="valid-feedback">OK!</div>
-
-                                                </div><!-- Deposit/Withdrawal END-->
-                                                <div class="m-2">
-                                                    <select class="form-select" required aria-label="select">
-                                                        <option value="">Choose Action...</option>
-                                                        <option value="1">Withdrawal</option>
-                                                        <option value="2">Deposit</option>
-                                                    </select>
-                                                    <div class="invalid-feedback">Select Deposit/Withdrawal!</div>
-                                                    <div id="selectDepositSuccessMessage" class="valid-feedback">OK!</div>
-                                                </div><!-- Select Deposit/Withdrawal END-->
-                                                <!-- Save Button-->
-                                                <div class="row g-2 m-2">
-                                                    <button type="submit" name="add" class="btn btn-success ">Add</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Delete Modal -->
-                            <div class="modal fade" id="deleteProject" tabindex="-1"
-                                 aria-labelledby="deleteProject" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Are You Sure?</h5>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h5 class="text-danger text-center">You are about to delete "sitename" permanently!</h5>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                            <button type="button" class="btn btn-danger">Yes, Delete</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
@@ -342,6 +226,127 @@ include ('includes/header.php');
         </div>
     </div>
 </section>
+    <!-- Add New Investment Modal -->
+    <div class="modal fade" id="addProjectModal" tabindex="-1"
+         aria-labelledby="addNewProjectModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"> Add New Investment</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body py-3">
+                        <div id="addedProject"></div>
+                        <div class="needs-validation was-validated" id="addInvForm">
 
-<?php include("includes/footer.php"); ?>
+                            <div>
+
+                                <label class="form-label" for="projectName">Project Name</label>
+                                <input class="form-control" type="text" name="project_name" placeholder="Project Name"
+                                       pattern="^([a-zA-Z0-9_ ]{5,45})$"
+                                       id="projectName" required="required"/>
+
+                                <div class="invalid-feedback">Enter Project Name!</div>
+                                <div class="valid-feedback">Good!</div>
+
+                            </div><!-- Project Name END-->
+                            <div>
+                                <label class="form-label" for="deposit">Deposit</label>
+                                <input class="form-control" type="number" step="0.01" name="deposit" placeholder="$120.00"
+                                       id="deposit" required="required"/>
+                                <div class="invalid-feedback">Enter Deposit!</div>
+                                <div class="valid-feedback">Good!</div>
+                            </div><!-- Deposit END-->
+                            <!-- Add Button-->
+                            <div class="row g-2 my-1">
+                                <button id="addProject" type="submit" name="add" class="btn btn-success">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success" id="addProjectAgain" style="display:none;">Add New</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Modal -->
+    <div class="modal fade" id="editProject" tabindex="-1"
+         aria-labelledby="editProject" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Deposit/Withdrawal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <h4 id="projectToUpdate" class="text-center"></h4>
+
+                    <h4 id="editedProject" class="text-center"></h4>
+
+                    <div class="needs-validation was-validated" id="editInvForm">
+
+                        <div class="m-2">
+
+                            <label class="form-label" for="editProjectAmount">Amount</label>
+                            <input class="form-control" type="number" step="0.01" name="deposit" placeholder="$120.00"
+                                   id="editProjectAmount" required="required"/>
+
+                            <div id="depositErrorMessage" class="invalid-feedback">Enter Amount!</div>
+                            <div id="depositSuccessMessage" class="valid-feedback">OK!</div>
+
+                        </div><!-- Deposit/Withdrawal END-->
+                        <div class="m-2">
+                            <select id="editProjectAction" class="form-select" required aria-label="select">
+                                <option value="">Choose Action...</option>
+                                <option value="withdrawal">Withdrawal</option>
+                                <option value="deposit">Deposit</option>
+                            </select>
+                            <div class="invalid-feedback">Select Deposit/Withdrawal!</div>
+                            <div id="selectDepositSuccessMessage" class="valid-feedback">OK!</div>
+                        </div><!-- Select Deposit/Withdrawal END-->
+                        <!-- Save Button-->
+                        <div class="row g-2 m-2">
+                            <button id="saveEditProject" type="submit" name="add" class="btn btn-success ">Add</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="closeEditModal" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="editProjectAgain" type="button" class="btn btn-primary" style="display:none;">Add Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Delete Modal -->
+    <div class="modal fade" id="deleteProject" tabindex="-1"
+         aria-labelledby="deleteProject" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Are You Sure?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <h4 id="deletedProject" class="text-center text-danger"></h4>
+                    <h5 id="projectToDelete" class="text-danger text-center"></h5>
+
+                </div>
+                <div class="modal-footer">
+                    <button id="closeDeleteModalBtn" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button id="confirmDeleteProjectBtn" type="button" class="btn btn-danger">Yes, Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php
+include("includes/footer.php");
+}else{
+    header("Location: login.php");
+}
+?>
 

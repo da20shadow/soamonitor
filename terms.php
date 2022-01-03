@@ -1,4 +1,5 @@
 <?php
+require_once('core/init.php');
 $title = "Terms and Conditions - SOAMonitor.com";
 include ('includes/header.php');
 ?>

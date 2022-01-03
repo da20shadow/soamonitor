@@ -1,5 +1,5 @@
 <?php
-include('core/init.php');
+
 global $title;
 ?>
 <!DOCTYPE html>
@@ -16,6 +16,7 @@ global $title;
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="icon" href="assets/img/icons/fav.ico" type="image/x-icon" />
     <title><?php echo htmlspecialchars($title); ?></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
 <body>
@@ -53,6 +54,8 @@ global $title;
                     <div class="navbar-nav navbar-nav-scroll me-auto ">
                         <a href="index.php" class="nav-link"><i class="bi bi-house"></i> Home</a>
                         <a href="news.php" class="nav-link"><i class="bi bi-newspaper"></i> News</a>
+                        <a href="contact_us.php" class="nav-link"><i class="bi bi-life-preserver"></i> Support</a>
+                        <?php if (isset($_SESSION['username'])){?>
                         <div class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="bi bi-plus-lg"></i> Add
@@ -63,12 +66,12 @@ global $title;
                                 <a class="dropdown-item" href="add_new_investment.php"><i class="bi bi-clipboard-data"></i> New Project</a>
                                 <a class="dropdown-item" href="add_new_post.php"><i class="bi bi-pencil-square"></i> Blog Post</a>
                             </div>
-                        </div>
-                        <!--Add New ad, post.. Dropdown END -->
+                        </div><!--Add New ad, post.. Dropdown END -->
+                        <a href="logout.php" class="nav-link"><i class="bi bi-box-arrow-left"></i> Logout</a>
+                        <?php }else{?>
                         <a href="login.php" class="nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
                         <a href="register.php" class="nav-link"><i class="bi bi-person-plus"></i> Register</a>
-                        <a href="contact_us.php" class="nav-link"><i class="bi bi-life-preserver"></i> Support</a>
-                        <a href="includes/logout.php" class="nav-link"><i class="bi bi-box-arrow-left"></i> Logout</a>
+                        <?php }?>
                     </div>
                     <!--Live Search -->
                     <div class="nav my-3 my-xl-0 px-4 align-items-center">
@@ -118,7 +121,7 @@ global $title;
                         <!-- Dropdown Menu Links-->
                         <a href="account.php" class="dropdown-item"><i class="bi bi-speedometer2 fa-fw me-2"></i>Dashboard</a>
                         <a href="edit_profile.php" class="dropdown-item"><i class="bi bi-gear fa-fw me-2"></i>Profile Settings</a>
-                        <a href="logout.php" class="sign-out dropdown-item"><i class="bi bi-power fa-fw me-2"></i> Sign Out</a>
+                        <a href="../logout.php" class="sign-out dropdown-item"><i class="bi bi-power fa-fw me-2"></i> Sign Out</a>
 
                     </div>
                     <!--Avatar End-->

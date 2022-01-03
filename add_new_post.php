@@ -1,4 +1,7 @@
 <?php
+require_once('core/init.php');
+
+if (isset($_SESSION['username'])){
 $title = "Add New Post SOAMonitor.com";
 include('includes/header.php');
 echo $title;?>
@@ -22,4 +25,9 @@ echo $title;?>
     </div>
 </div>
 
-<?php include("includes/footer.php"); ?>
+<?php
+include("includes/footer.php");
+}else{
+    header("Location: login.php");
+}
+?>
