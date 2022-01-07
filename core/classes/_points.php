@@ -16,5 +16,6 @@ Class Points
         $stmt->bindParam(':amount', $amount, PDO::PARAM_STR);
         $stmt->bindParam(':id', $id, PDO::PARAM_STR);
         $stmt->execute();
+        return $stmt->rowCount();
     }
 }

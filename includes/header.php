@@ -54,7 +54,6 @@ global $title;
                     <div class="navbar-nav navbar-nav-scroll me-auto ">
                         <a href="index.php" class="nav-link"><i class="bi bi-house"></i> Home</a>
                         <a href="news.php" class="nav-link"><i class="bi bi-newspaper"></i> News</a>
-                        <a href="contact_us.php" class="nav-link"><i class="bi bi-life-preserver"></i> Support</a>
                         <?php if (isset($_SESSION['username'])){?>
                         <div class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -120,7 +119,7 @@ global $title;
                         </div>
                         <!-- Dropdown Menu Links-->
                         <a href="account.php" class="dropdown-item"><i class="bi bi-speedometer2 fa-fw me-2"></i>Dashboard</a>
-                        <a href="edit_profile.php" class="dropdown-item"><i class="bi bi-gear fa-fw me-2"></i>Profile Settings</a>
+                        <a href="edit_profile.php" class="dropdown-item"><i class="bi bi-gear fa-fw me-2"></i>Edit Profile</a>
                         <a href="../logout.php" class="sign-out dropdown-item"><i class="bi bi-power fa-fw me-2"></i> Sign Out</a>
 
                     </div>

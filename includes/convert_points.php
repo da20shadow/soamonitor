@@ -13,12 +13,12 @@ if ($userInfo){
     $userMembership = $userInfo['membership'];
 
     if ($availablePoints >= $points){
+        $amount = $points * 0.0002;
         if ($userMembership == "VIP"){
             $amount = $points * 0.001;
-        }else{
-            $amount = $points * 0.0002;
         }
         $update = $getFromPoints->convertPoints($points,$amount,$user_id);
+        echo htmlspecialchars($points . " Points Converted For $" . $amount);
     }
 }
     }else{

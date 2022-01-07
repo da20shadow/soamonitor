@@ -174,7 +174,7 @@ include ('includes/header.php');
                     <div class="col-12">
                         <div class="card card-body bg-transparent border p-4 h-100">
                             <div class="row g-4">
-                                <h3>My Ads</h3>
+                                <h3><i class="bi bi-bar-chart me-2"></i>My Ads</h3>
                             </div>
                             <!--Ads Table-->
                             <table class="projects-table table-hover mt-2">
@@ -194,8 +194,8 @@ include ('includes/header.php');
                                     <td>224</td>
                                     <td class="text-success">Running</td>
                                     <td>
-                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProject">Pause</button>
-                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProject">Edit</button>
+                                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#editProject">Pause</button>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editProject">Edit</button>
                                     </td>
                                 </tr>
                                 <tr class="align-items-center">
@@ -204,8 +204,8 @@ include ('includes/header.php');
                                     <td>1242</td>
                                     <td class="text-danger">Paused</td>
                                     <td>
-                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProject">Start</button>
-                                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editProject">Edit</button>
+                                        <button class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#editProject">Start</button>
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editProject">Edit</button>
                                     </td>
                                 </tr>
                                 </tbody>

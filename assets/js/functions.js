@@ -1,9 +1,4 @@
 
-//Enable tooltips everywhere
-// let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
-// let tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-//     return new bootstrap.Tooltip(tooltipTriggerEl);
-// });
 // Copy text
 function copyFunc(){
     let textToCopy = document.getElementById("ref-Url");

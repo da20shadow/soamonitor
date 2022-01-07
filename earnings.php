@@ -162,7 +162,7 @@ include ('includes/header.php');
                     <div class="col-12">
                         <div class="card card-body bg-transparent border p-4 h-100">
                             <div class="row g-4">
-                                <h3>Earned Commissions</h3>
+                                <h3>Earning History</h3>
                             </div>
                             <!--Apex Chart-->
 

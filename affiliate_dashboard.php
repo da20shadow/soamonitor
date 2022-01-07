@@ -2,7 +2,9 @@
 require_once('core/init.php');
 
 if (isset($_SESSION['username'])){
-$title = "Affiliate Dashboard - SOAMonitor.com";
+    $user_id = $_SESSION['user_id'];
+    $username = $_SESSION['username'];
+    $title = "Affiliate Dashboard - SOAMonitor.com";
 include ('includes/header.php');
 ?>
 <div class="container-fluid p-1"></div>
@@ -168,12 +170,11 @@ include ('includes/header.php');
                                 <span class="input-group-text fw-bold">Ref Link:</span>
                                 <input onclick="select()" type="text" name="ref-Url"
                                        class="form-control bg-white shadow-none" id="ref-Url"
-                                       value="https://soamonitor.com/registration.php?ref=9"
+                                       value="https://soamonitor.com/registration.php?ref=<?php echo htmlspecialchars($username);?>"
                                        readonly >
-                                <button onclick="copyFunc()" class="btn btn-primary"
-                                        data-bs-toggle="tooltip" data-bs-placement="top"
-                                        data-bs-trigger="click"
-                                        title="Copied!" id="btn-copy">Copy</button>
+                                <button onclick="copyFunc()" class="btn btn-primary" type="button"
+                                        id="btn-copy">Copy</button>
+
                             </div><!-- Ref Link END-->
                             <!--Referrals List-->
                             <table class="projects-table table-hover mt-2">
@@ -191,7 +192,7 @@ include ('includes/header.php');
                                     <td>
                                         <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Avatar"
                                              class="avatar-img rounded-circle border border-white border-3 shadow"
-                                             width="48px" height="48px">
+                                             width="42px" height="42px">
                                         John Doe
                                     </td>
                                     <td>4124</td>
@@ -205,7 +206,7 @@ include ('includes/header.php');
                                     <td>
                                         <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Avatar"
                                              class="avatar-img rounded-circle border border-white border-3 shadow"
-                                             width="48px" height="48px">
+                                             width="42px" height="42px">
                                         John Doe 2
                                     </td>
                                     <td>51242</td>

@@ -104,7 +104,7 @@ include ('includes/header.php');
 
     </div>
 </div><!-- Blog Statistics END -->
-<div class="bg-white pb-5">
+<div class="bg-white">
     <div class="container mt-5 pt-5 border-top">
 
         <div class="row">
@@ -114,41 +114,79 @@ include ('includes/header.php');
                 <h2 class="fs-1 text-center me-5 fw-bold"><i class="bi bi-graph-up"></i> Trending on SOA monitor</h2>
                 <p class="text-center">Check out most 🔥 posts in the blog</p>
                 <!-- Title END-->
-                        <div class="row mt-5 border shadow-sm py-4 m-1">
-                            <!-- Featured Image-->
-                            <div class="col-12 col-md-4 text-center">
-                                <img src="assets/img/remote-work.png" class="img-fluid img-thumbnail border mb-4 m-auto m-md-2" alt="Featured image">
-                            </div>
 
-                            <div class="col-12 col-md-8">
-                                <h4 class="ms-3 fw-bolder">
-                                    <a href="blog_post.php?slug='.$post['slug'].'">'.$post_title.'</a>
-                                </h4>
-                                <p class="ms-3">
-                                    Blog post content...
+                <div class="card mb-3 post">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="assets/img/post.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">
+                                    <small class="text-muted d-block d-md-inline me-5 py-1 py-md-0">32<i class="bi bi-chat ms-1"></i></small>
+                                    <small class="text-muted d-block d-md-inline me-5 py-1 py-md-0"><i class="bi bi-calendar me-2"></i>06/01/2022 </small>
+                                    <small class="text-muted d-block d-md-inline me-5 py-1 py-md-0">
+                                        <a class="position-relative p-0 d-inline-block text-decoration-none text-muted"
+                                           href="#">
+                                            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="24" alt="Avatar" />
+                                            Username
+                                        </a>
+                                    </small>
                                 </p>
-                                <small class="ms-3 d-inline">Author Username</small>
-                                <small class="d-inline ms-3">Date 27/12/2021</small>
+                                <a href="#" class="btn btn-sm rounded bg-white border mt-1 me-5">Category</a>
+                                <a href="#" class="btn btn-sm rounded bg-white border mt-1">#Tag</a>
+                                <a href="#" class="btn btn-sm rounded bg-white border mt-1">#Tag2</a>
                             </div>
-                        </div><!--Post end-->
-                        <div class="row mt-5 border shadow-sm py-4 m-1">
-                            <!-- Featured Image-->
-                            <div class="col-12 col-md-4 text-center">
-                                <img src="assets/img/post.png" class="img-fluid img-thumbnail border mb-4 m-auto m-md-2"
-                                     alt="Featured image">
+                        </div>
+                    </div>
+                </div><!--Post END -->
+                <div class="card mb-3 post">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="assets/img/remote-work.png" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">
+                                    <small class="text-muted d-block d-md-inline me-5 py-1 py-md-0">32<i class="bi bi-chat ms-1"></i></small>
+                                    <small class="text-muted d-block d-md-inline me-5 py-1 py-md-0"><i class="bi bi-calendar me-2"></i>06/01/2022 </small>
+                                    <small class="text-muted d-block d-md-inline me-5 py-1 py-md-0">
+                                        <a class="position-relative p-0 d-inline-block text-decoration-none text-muted"
+                                           href="#">
+                                            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="24" alt="Avatar" />
+                                            Username
+                                        </a>
+                                    </small>
+                                </p>
+                                <a href="#" class="btn btn-sm rounded bg-white border mt-1 me-5">Category</a>
+                                <a href="#" class="btn btn-sm rounded bg-white border mt-1">#Tag</a>
+                                <a href="#" class="btn btn-sm rounded bg-white border mt-1">#Tag2</a>
                             </div>
+                        </div>
+                    </div>
+                </div><!--Post END -->
 
-                            <div class="col-12 col-md-8">
-                                <h4 class="ms-3 fw-bolder">
-                                    <a href="blog_post.php?slug='.$post['slug'].'">'.$post_title.'</a>
-                                </h4>
-                                <p class="ms-3">
-                                    Blog post content...
-                                </p>
-                                <small class="ms-3 d-inline">Author Username</small>
-                                <small class="d-inline ms-3">Date 27/12/2021</small>
-                            </div>
-                        </div><!--Post end-->
+                <div class="card text-center mt-4">
+                    <div class="card-header">
+                        Featured Space
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            Special title treatment
+                        </h4>
+                        <p class="card-text">
+                            With supporting text below as a natural lead-in to additional content.
+                            With supporting text below as a natural lead-in to additional content.
+                        </p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                    <div class="card-footer text-muted"><small>$13/Week</small></div>
+                </div><!--The Ad END-->
+
             </div>
             <!-- Right Sidebar -->
             <div class="col-12 col-md-4 text-center">
@@ -165,7 +203,18 @@ include ('includes/header.php');
                 <p>3. Mhary - 3400</p>
                 <p>4. Praven - 2400</p>
                 <p>5. Praven - 2400</p>
-            </div>
+                <a href="#">View All..</a>
+
+                <div class="card mt-3">
+                    <img src="assets/img/post.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">$15/Week</small>
+                    </div>
+                </div>
         </div>
     </div>
 </div><!-- Trending Posts Left Bar END-->
