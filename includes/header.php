@@ -1,6 +1,20 @@
 <?php
-
 global $title;
+global $pageId;
+
+if (isset($_SESSION['username'])){
+
+    $user_id = $_SESSION['user_id'];
+    $username = $_SESSION['username'];
+
+    $user_id = $getFromFunc->checkInput($user_id);
+    $userInfo = $getFromUser->getUserInfo($user_id);
+
+    $first_name = $userInfo['first_name'];
+    $last_name = $userInfo['last_name'];
+    $email = $userInfo['email'];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,15 +25,12 @@ global $title;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link rel="icon" href="/assets/img/icons/fav.ico" type="image/x-icon" />
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" href="assets/img/icons/fav.ico" type="image/x-icon" />
+    <link rel="icon" href="assets/img/icons/fav.ico" type="image/x-icon"/>
     <title><?php echo htmlspecialchars($title); ?></title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 
-<body>
+<body id="<?php echo htmlspecialchars($pageId); ?>">
     <header class="sticky-lg-top bg-light">
         <!-- Navigation -->
         <nav class="navbar navbar-expand-md border-bottom">
@@ -61,16 +72,17 @@ global $title;
                             </a>
                             <!--Dropdown Menu Links -->
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="add_funds.php"><i class="bi bi-coin"></i> Add Funds</a>
                                 <a class="dropdown-item" href="add_new_ad.php"><i class="bi bi-badge-ad"></i> New Ad</a>
-                                <a class="dropdown-item" href="add_new_investment.php"><i class="bi bi-clipboard-data"></i> New Project</a>
+                                <a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#addProjectModal"><i class="bi bi-clipboard-data"></i> New Project</a>
                                 <a class="dropdown-item" href="add_new_post.php"><i class="bi bi-pencil-square"></i> Blog Post</a>
                             </div>
                         </div><!--Add New ad, post.. Dropdown END -->
-                        <a href="logout.php" class="nav-link"><i class="bi bi-box-arrow-left"></i> Logout</a>
                         <?php }else{?>
                         <a href="login.php" class="nav-link"><i class="bi bi-box-arrow-in-right"></i> Login</a>
                         <a href="register.php" class="nav-link"><i class="bi bi-person-plus"></i> Register</a>
                         <?php }?>
+                        <a href="" class="nav-link" data-bs-toggle="modal" data-bs-target="#reportProjectModal"><i class="bi bi-exclamation-triangle"></i> Report SCAM</a>
                     </div>
                     <!--Live Search -->
                     <div class="nav my-3 my-xl-0 px-4 align-items-center">
@@ -98,6 +110,7 @@ global $title;
                         </div>
                     </div>
                 </div>
+                <?php if (isset($_SESSION['username'])){?>
                 <!-- Avatar -->
                 <div class="dropdown ms-1 ms-lg-0">
                     <a class="position-relative p-0 d-inline-block" href="#" id="navbarDropdownMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -111,8 +124,8 @@ global $title;
                                     <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Avatar" class="avatar-img rounded-circle shadow" width="38px" height="38px" />
                                 </div>
                                 <div>
-                                    <p class="fw-bold">Firstname Lastname</p>
-                                    <p class="small m-0">admin@adminemail.com</p>
+                                    <p class="fw-bold"><?php echo htmlspecialchars($first_name ." ".$last_name); ?></p>
+                                    <p class="small m-0"><?php echo htmlspecialchars($email) ?></p>
                                 </div>
                             </div>
                             <hr>
@@ -125,7 +138,7 @@ global $title;
                     </div>
                     <!--Avatar End-->
                 </div>
-
+                <?php } ?>
             </div>
         </nav>
     </header>

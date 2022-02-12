@@ -1,11 +1,12 @@
 @import "_variables";
 @import "_icons";
 @import "_header";
+@import "_account";
 @import "_mixins";
 @import "_forms";
-@import "_footer";
-@import "_account";
+@import "_tables";
 @import "_articles";
+@import "_footer";
 
 *{
   margin: 0;
@@ -13,26 +14,6 @@
 
 body{
   background-color: $neutralBlue;
-}
-
-.post{
-  max-width: 96%;
-  &:hover{
-    box-shadow: 5px 6px 6px 2px #e9ecef;
-    transform: scale(1.01);
-  }
-}
-
-
-.f-nav{
-  a{
-    color: lightgray;
-    text-decoration: none;
-    &:hover{
-      color: #f6faff;
-      text-decoration: underline;
-    }
-  }
 }
 
 //Dropdown Items
@@ -99,6 +80,14 @@ body{
   background-color: #f0ebf9;
   i{
     color: #6f42c1;
+  }
+  button{
+    background-color:#6f42c1;
+    color: #f0ebf9;
+    &:hover{
+      background-color: #582da6;
+      color: #ede8f6;
+    }
   }
 }
 .stat-members{

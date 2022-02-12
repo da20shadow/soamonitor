@@ -1,0 +1,13 @@
+.post{
+  max-width: 96%;
+  &:hover{
+    box-shadow: 5px 6px 6px 2px #e9ecef;
+    transform: scale(1.01);
+  }
+}
+
+.article-title{
+  text-align: center;
+  text-shadow: -1px -1px 0;
+  font-weight: 600;
+}

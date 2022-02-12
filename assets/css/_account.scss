@@ -4,29 +4,3 @@
   color: #086bc9;
   border-radius: 0.325rem;
 }
-//My Investments Table
-.projects-table{
-  thead{
-    th{
-      //background-color: #e5f0fa;
-      //color: $accentColor;
-      background-color:#e2e3e5;
-      color: $primaryTextColor;
-      padding: 15px;
-    }
-  }
-  tbody{
-    tr{
-      border-bottom: 1px solid #e2e3e5;
-      &:hover{
-        background-color:#ebeff3;
-
-      }
-    }
-    td{
-      padding:7px 10px;
-      font-weight: 600;
-    }
-  }
-
-}

@@ -1,5 +1,5 @@
 $(function(){
-    //pokazva lista s proekti
+    //Display projects list
     $.ajax({
         url: "includes/view_investments.php",
         type: "POST",

@@ -1,36 +1,31 @@
 /* ---- Project Colors ---- */
-/* ---- Project Colors ---- */
-/* Typography H1 H2 H3 H4 H5 H6 p etc */
-/* ---- Buttons Style ---- */
-/* ---- T ---- */
 .a-m:hover {
   background-color: #e5f0fa;
   color: #086bc9;
   border-radius: 0.325rem;
 }
 
-.projects-table thead th {
+/* ---- Project Colors ---- */
+/* Typography H1 H2 H3 H4 H5 H6 p etc */
+/* ---- Buttons Style ---- */
+/* ---- T ---- */
+#projects-table, #referralsTable, #ads-table {
+  width: 100%;
+}
+#projects-table thead th, #referralsTable thead th, #ads-table thead th {
   background-color: #e2e3e5;
   color: #002869;
   padding: 15px;
 }
-.projects-table tbody tr {
+#projects-table tbody tr, #referralsTable tbody tr, #ads-table tbody tr {
   border-bottom: 1px solid #e2e3e5;
 }
-.projects-table tbody tr:hover {
+#projects-table tbody tr:hover, #referralsTable tbody tr:hover, #ads-table tbody tr:hover {
   background-color: #ebeff3;
 }
-.projects-table tbody td {
+#projects-table tbody td, #referralsTable tbody td, #ads-table tbody td {
   padding: 7px 10px;
   font-weight: 600;
-}
-
-* {
-  margin: 0;
-}
-
-body {
-  background-color: #F2F7FF;
 }
 
 .post {
@@ -41,13 +36,84 @@ body {
   transform: scale(1.01);
 }
 
-.f-nav a {
+.article-title {
+  text-align: center;
+  text-shadow: -1px -1px 0;
+  font-weight: 600;
+}
+
+#footer .footer-soc-icons a {
+  font-size: 1.5rem;
+  color: #F2F7FF;
+}
+#footer .footer-soc-icons a:hover {
+  transform: scale(1.1);
+}
+#footer .f-nav a {
   color: lightgray;
   text-decoration: none;
 }
-.f-nav a:hover {
+#footer .f-nav a:hover {
   color: #f6faff;
   text-decoration: underline;
+}
+
+.back-top {
+  cursor: pointer;
+  position: fixed !important;
+  bottom: 40px;
+  right: 40px;
+  display: block;
+  z-index: 99;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background: rgba(6, 106, 201, 0.2);
+  color: #066ac9;
+  border-radius: 10%;
+  width: 52px;
+  height: 52px;
+  line-height: 52px;
+  text-align: center;
+}
+
+.back-top-show {
+  cursor: pointer;
+  position: fixed !important;
+  bottom: 40px;
+  right: 40px;
+  display: block;
+  z-index: 99;
+  background: rgba(6, 106, 201, 0.2);
+  color: #066ac9;
+  border-radius: 10%;
+  width: 52px;
+  height: 52px;
+  line-height: 52px;
+  text-align: center;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.back-top-show:hover {
+  background-color: #066ac9;
+}
+.back-top-show:hover i {
+  color: white;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #F2F7FF;
 }
 
 .dropdown-item {
@@ -117,6 +183,14 @@ body {
 }
 .stat-reviews i {
   color: #6f42c1;
+}
+.stat-reviews button {
+  background-color: #6f42c1;
+  color: #f0ebf9;
+}
+.stat-reviews button:hover {
+  background-color: #582da6;
+  color: #ede8f6;
 }
 
 .stat-members {

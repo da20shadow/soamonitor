@@ -15,7 +15,7 @@ include ('includes/header.php');
                 it’s can be without this paragraph.
             </p>
 
-            <button class="btn btn-primary btn-lg shadow-sm" data-bs-toggle="button"
+            <button class="btn btn-primary bg-gradient btn-lg shadow-sm" data-bs-toggle="button"
                     onclick="window.location.href='register.php'">Get Started</button>
         </div>
         <!-- Header Title & Description END -->
@@ -118,26 +118,30 @@ include ('includes/header.php');
                 <div class="card mb-3 post">
                     <div class="row g-0">
                         <div class="col-md-4">
-                            <img src="assets/img/post.png" class="img-fluid rounded-start" alt="...">
+                            <a href="view_article.php">
+                                <img src="assets/img/post.png" class="img-fluid rounded-start" alt="...">
+                            </a>
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
+                                <a href="view_article.php" class="text-decoration-none">
+                                    <h5 class="card-title">Card title</h5>
+                                </a>
                                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">
+                                <a href="#" class="btn btn-sm rounded bg-white border mt-1 me-5">Category</a>
+                                <a href="#" class="btn btn-sm rounded bg-white border mt-1">#Tag</a>
+                                <a href="#" class="btn btn-sm rounded bg-white border mt-1">#Tag2</a>
+                                <p class="card-text mt-3">
                                     <small class="text-muted d-block d-md-inline me-5 py-1 py-md-0">32<i class="bi bi-chat ms-1"></i></small>
                                     <small class="text-muted d-block d-md-inline me-5 py-1 py-md-0"><i class="bi bi-calendar me-2"></i>06/01/2022 </small>
                                     <small class="text-muted d-block d-md-inline me-5 py-1 py-md-0">
                                         <a class="position-relative p-0 d-inline-block text-decoration-none text-muted"
-                                           href="#">
+                                           href="profile.php?profile_id=1">
                                             <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="24" alt="Avatar" />
                                             Username
                                         </a>
                                     </small>
                                 </p>
-                                <a href="#" class="btn btn-sm rounded bg-white border mt-1 me-5">Category</a>
-                                <a href="#" class="btn btn-sm rounded bg-white border mt-1">#Tag</a>
-                                <a href="#" class="btn btn-sm rounded bg-white border mt-1">#Tag2</a>
                             </div>
                         </div>
                     </div>
@@ -151,7 +155,10 @@ include ('includes/header.php');
                             <div class="card-body">
                                 <h5 class="card-title">Card title</h5>
                                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text">
+                                <a href="#" class="btn btn-sm rounded bg-white border mt-1 me-5">Category</a>
+                                <a href="#" class="btn btn-sm rounded bg-white border mt-1">#Tag</a>
+                                <a href="#" class="btn btn-sm rounded bg-white border mt-1">#Tag2</a>
+                                <p class="card-text mt-3">
                                     <small class="text-muted d-block d-md-inline me-5 py-1 py-md-0">32<i class="bi bi-chat ms-1"></i></small>
                                     <small class="text-muted d-block d-md-inline me-5 py-1 py-md-0"><i class="bi bi-calendar me-2"></i>06/01/2022 </small>
                                     <small class="text-muted d-block d-md-inline me-5 py-1 py-md-0">
@@ -162,30 +169,13 @@ include ('includes/header.php');
                                         </a>
                                     </small>
                                 </p>
-                                <a href="#" class="btn btn-sm rounded bg-white border mt-1 me-5">Category</a>
-                                <a href="#" class="btn btn-sm rounded bg-white border mt-1">#Tag</a>
-                                <a href="#" class="btn btn-sm rounded bg-white border mt-1">#Tag2</a>
                             </div>
                         </div>
                     </div>
                 </div><!--Post END -->
 
-                <div class="card text-center mt-4">
-                    <div class="card-header">
-                        Featured Space
-                    </div>
-                    <div class="card-body">
-                        <h4 class="card-title">
-                            Special title treatment
-                        </h4>
-                        <p class="card-text">
-                            With supporting text below as a natural lead-in to additional content.
-                            With supporting text below as a natural lead-in to additional content.
-                        </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                    <div class="card-footer text-muted"><small>$13/Week</small></div>
-                </div><!--The Ad END-->
+                <!--The Featured Ad Space-->
+                <?php include "template/featured_ad_space.php"; ?>
 
             </div>
             <!-- Right Sidebar -->
@@ -198,23 +188,15 @@ include ('includes/header.php');
                 <button class="btn rounded bg-white border mt-1">Category 5</button>
                 <hr class="divider">
                 <p class="text-uppercase fw-bold"><i class="bi bi-trophy"></i> TOP Members</p>
-                <p>1. Aayafi - 5400</p>
-                <p>2. Bhavin - 4400</p>
-                <p>3. Mhary - 3400</p>
-                <p>4. Praven - 2400</p>
-                <p>5. Praven - 2400</p>
+                <p>1. Aayafi - 5400 <i class="bi bi-coin text-warning"></i></p>
+                <p>2. Bhavin - 4400 <i class="bi bi-coin text-warning"></i></p>
+                <p>3. Mhary - 3400 <i class="bi bi-coin text-warning"></i></p>
+                <p>4. Praven - 2400 <i class="bi bi-coin text-warning"></i></p>
+                <p>5. Praven - 2400 <i class="bi bi-coin text-warning"></i></p>
                 <a href="#">View All..</a>
 
-                <div class="card mt-3">
-                    <img src="assets/img/post.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                        <small class="text-muted">$15/Week</small>
-                    </div>
-                </div>
+                <!--image ad space -->
+                <?php include "template/image_ad_space.php"; ?>
         </div>
     </div>
 </div><!-- Trending Posts Left Bar END-->

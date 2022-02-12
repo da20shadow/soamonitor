@@ -73,7 +73,8 @@ include ('includes/header.php');
             </div>
 
         </div>
-
+        <!--The Featured Ad Space-->
+        <?php include "template/featured_ad_space.php"; ?>
     </div>
 
 </div>

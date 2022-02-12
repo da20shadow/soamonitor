@@ -34,6 +34,19 @@ Class User{
         return $stmt->fetch(PDO::FETCH_OBJ);
     }
 
+//Check if user ID exist
+    public function checkIfUserIDExists($user_id): bool
+    {
+        $stmt = $this->pdo->prepare('SELECT * FROM `users` WHERE `id` = :user_id');
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_OBJ);
+        if ($result){
+            return true;
+        }
+        return false;
+    }
+
 //Check if email exist
     public function checkIfEmailExists($email){
         $stmt = $this->pdo->prepare('SELECT `email` FROM `users` WHERE `email` = :email');

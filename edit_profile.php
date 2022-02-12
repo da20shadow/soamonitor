@@ -9,154 +9,33 @@ $aboutMe = "Description about me....";
 
 include ('includes/header.php');
 ?>
-<div class="container-fluid p-1"></div>
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-12">
-            <div class="card bg-transparent card-body p-0 border-0">
-                <div class="row d-flex justify-content-between">
-                    <!--Avatar -->
-                    <div class="col-auto mt-4 mt-md-0">
-                        <div class="avatar">
-                            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" alt="Avatar"
-                                 class="avatar-img rounded-circle border border-white border-3 shadow"
-                                 width="128px" height="128px">
-                        </div>
-                    </div>
-                    <!--Profile Info -->
-                    <div class="col d-md-flex justify-content-between align-items-center mt-4">
-                        <div>
-                            <h1 class="my-1 fs-4 fw-bold">
-                                Mehmed Syuleyman
-                                <i class="bi bi-patch-check-fill text-info small"></i>
-                            </h1>
-                            <ul class="list-inline mb-0">
-                                <li class="list-inline-item h6 fw-light me-3 mb-1">
-                                    <i class="bi bi-gem"></i>
-                                    VIP Member
-                                </li>
-                                <li class="list-inline-item h6 fw-light me-3 mb-1">
-                                    <i class="bi bi-people text-orange me-2"></i>
-                                    35 Referrals
-                                </li>
-                                <li class="list-inline-item h6 fw-light me-3 mb-1">
-                                    <i class="bi bi-clipboard-data text-purple me-2"></i>
-                                    7 Projects
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Add New Investment Button -->
-                        <div class="d-flex align-items-center mt-2 mt-md-0">
-                            <a href="add_new_investment.php" class="btn btn-primary mb-0"><i class="bi bi-plus-lg"></i> Add New Project</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div><!--Profile Banner END-->
+<!--Profile Banner-->
+<?php include "template/account_profile_banner.php"; ?>
 <!-- Account Page Content Start -->
 <section class="pt-0">
     <div class="container my-4">
         <hr class="divider">
         <div class="row">
             <!--Left Sidebar -->
-            <div class="col-xl-3">
-
-                <nav class="navbar navbar-expand-md">
-                    <div class="container px-1 px-xl-2 mx-0">
-                        <button class="navbar-toggler m-auto collapsed my-3 w-100 bg-light border-3 border-dark shadow" type="button"
-                                data-bs-toggle="collapse"
-                                data-bs-target="#sideBarCollapse"
-                                aria-controls="sideBarCollapse"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="bi bi-list"></i>
-                            Profile Menu
-                        </button>
-                        <div class="collapse navbar-collapse w-100 p-3 border rounded-3 bg-light shadow" id="sideBarCollapse">
-                            <div class="row">
-                                <div class="col-12">
-                                    <a href="account.php" class="a-m nav-link border-bottom">
-                                        <i class="bi bi-speedometer2 fa-fw me-2"></i>Dashboard
-                                    </a>
-                                </div><!--Dashboard Link END-->
-                                <div class="col-12">
-                                    <a href="upgrade.php" class="a-m nav-link border-bottom">
-                                        <i class="bi bi-gem me-2"></i>Upgrade Account
-                                    </a>
-                                </div><!--Upgrade Link END-->
-                                <div class="col-12">
-                                    <a href="contests.php" class="a-m nav-link border-bottom">
-                                        <i class="bi bi-trophy"></i> Activity Contest
-                                    </a>
-                                </div><!--Contest Link END-->
-                                <div class="col-12">
-                                    <a href="earnings.php" class="a-m nav-link border-bottom">
-                                        <i class="bi bi-graph-up fa-fw me-2"></i>Earnings
-                                    </a>
-                                </div><!--Earnings Link END-->
-                                <div class="col-12">
-                                    <a href="payouts.php" class="a-m nav-link border-bottom">
-                                        <i class="bi bi-wallet2 fa-fw me-2"></i>Payouts</a>
-                                </div><!--Payouts Link END-->
-                                <div class="col-12">
-                                    <a href="my_investments.php" class="a-m nav-link border-bottom">
-                                        <i class="bi bi-clipboard-data me-2"></i>My Investments</a>
-                                </div><!--My Investments Link END-->
-                                <div class="col-12">
-                                    <a href="my_ads.php" class="a-m nav-link border-bottom">
-                                        <i class="bi bi-megaphone me-2"></i>My Ads</a>
-                                </div><!--My Ads Link END-->
-                                <div class="col-12">
-                                    <a href="affiliate_dashboard.php" class="a-m nav-link border-bottom">
-                                        <i class="bi bi-people me-2"></i>My Referrals</a>
-                                </div><!--Affiliate Dashboard Link END-->
-                                <div class="col-12">
-                                    <a href="edit_profile.php" class="a-m nav-link border-bottom">
-                                        <i class="bi bi-gear fa-fw me-2"></i>Settings</a>
-                                </div><!--Edit Profile Link END-->
-                                <div class="col-12">
-                                    <a href="#" class="a-m nav-link border-bottom">
-                                        <i class="bi bi-arrow-repeat me-2"></i>Subscription</a>
-                                </div><!--My Subscription Link END-->
-                                <div class="col-12">
-                                    <a href="#" class="sign-out a-m nav-link border-bottom">
-                                        <i class="bi bi-trash fa-fw me-2"></i>Delete Account</a>
-                                </div><!--Delete account Links -->
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </div>
+            <?php include "template/left_account_sidebar.php"; ?>
             <!--Main Content -->
             <div class="col-xl-9">
                 <!-- Edit Profile -->
-                <div class="row mt-3">
-                    <div class="col-12">
-                        <div class="card card-body bg-transparent border p-2 h-100">
+                <form class="row g-3 bg-white rounded-3 shadow p-4 mb-5 mt-3 needs-validation was-validated" novalidate="novalidate">
 
-                            <div class="row border rounded-3 m-3 p-3">
+                    <h3>Edit Profile</button></h3>
 
-                                <h3>Edit Profile</button></h3>
+                    <div class="col-md-6">
 
-                                <form class="needs-validation was-validated"
-                                      novalidate="novalidate">
+                        <label class="form-label" for="firstname">Change Avatar</label>
+                        <input type="file" class="form-control" aria-label="file Avatar" required>
+                        <div class="invalid-feedback">Example invalid form file feedback</div>
 
-                                    <div class="row">
+                    </div><!--Upload Avatar END -->
+                    <div class="col-md-6">
 
-                                    <div class="col-12 col-md-6">
-
-                                        <div class="mb-3">
-                                            <label class="form-label" for="firstname">Change Avatar</label>
-                                            <input type="file" class="form-control" aria-label="file Avatar" required>
-                                            <div class="invalid-feedback">Example invalid form file feedback</div>
-                                        </div>
-
-                                    </div><!--Upload Avatar END -->
-                                    <div class="col-12 col-md-6">
-
-                                        <label class="form-label" for="firstname">Country:</label>
-                                        <select class="form-select" required aria-label="select country">
+                        <label class="form-label" for="firstname">Country:</label>
+                        <select class="form-select" required aria-label="select country">
                                             <option value="">Select Country...</option>
                                             <option value="Afghanistan">Afghanistan</option>
                                             <option value="Albania">Albania</option>
@@ -398,219 +277,184 @@ include ('includes/header.php');
                                             <option value="Zambia">Zambia</option>
                                             <option value="Zimbabwe">Zimbabwe</option>
                                         </select>
-                                        <div class="invalid-feedback">Please, Select Country</div>
-                                        <div class="valid-feedback">Good!</div>
+                        <div class="invalid-feedback">Please, Select Country</div>
+                        <div class="valid-feedback">Good!</div>
 
-                                    </div><!-- Select Country END -->
+                    </div> <!-- Select Country END -->
+                    <div class="col-md-6">
 
-                                    </div> <!-- Avatar & Country END-->
+                        <label class="form-label" for="firstname">Firstname</label>
+                        <input class="form-control" type="text" name="firstname" placeholder="John"
+                               pattern="^[a-zA-Z]{3,45}$" id="firstname"
+                               value="<?php echo htmlspecialchars($first_name);?>" required />
+                        <div class="invalid-feedback">Enter Firstname</div>
+                        <div class="valid-feedback">Looks good!</div>
 
-                                    <div class="row">
+                    </div><!-- First Name -->
+                    <div class="col-md-6">
 
-                                    <div class="col-12 col-md-6">
+                        <label class="form-label" for="firstname">Lastname</label>
+                        <input class="form-control" type="text" name="firstname" placeholder="John"
+                               pattern="^([a-zA-Z]{3,45})$" id="firstname"
+                               value="<?php echo htmlspecialchars($last_name);?>" required/>
+                        <div class="invalid-feedback">Enter Lastname</div>
+                        <div class="valid-feedback">Looks good!</div>
 
-                                        <label class="form-label" for="firstname">Firstname</label>
-                                        <input class="form-control" type="text" name="firstname" placeholder="John"
-                                               pattern="^[a-zA-Z]{3,45}$"
-                                               id="firstname"
-                                               value="<?php echo htmlspecialchars($first_name);?>"/>
-                                        <div class="invalid-feedback">Enter Firstname</div>
-                                        <div class="valid-feedback">Looks good!</div>
-
-                                    </div><!-- First Name -->
-                                    <div class="col-12 col-md-6">
-
-                                        <label class="form-label" for="firstname">Lastname</label>
-                                        <input class="form-control" type="text" name="firstname" placeholder="John"
-                                               pattern="^([a-zA-Z]{3,45})$"
-                                               id="firstname"
-                                               value="<?php echo htmlspecialchars($last_name);?>"/>
-                                        <div class="invalid-feedback">Enter Lastname</div>
-                                        <div class="valid-feedback">Looks good!</div>
-
-                                    </div><!-- Last Name -->
-
-                                </div> <!--F name L name END -->
-
-                                    <div class="row">
-                                    <div class="col-12">
-                                        <div class="mb-3">
-                                            <label for="aboutMe" class="form-label">About me</label>
-                                            <textarea class="form-control is-invalid" id="aboutMe"
-                                                      maxlength="140"
-                                                      placeholder="Required example textarea" required><?php echo htmlspecialchars($aboutMe);?></textarea>
-                                            <div class="text-muted">Add brief description for your profile.</div>
-                                        </div>
-                                    </div>
-                                </div><!--About me END-->
-
-                                    <div class="mb-3">
-                                        <button class="btn btn-primary" type="submit" disabled>Save Changes</button>
-                                    </div><!--Save Changes BTN -->
-
-                                </form>
-
-                            </div><!--Avatar, F name L name about END-->
-
-                            <div class="row border rounded-3 m-3 p-3">
-
-                                <h3>Social media profile</button></h3>
-
-                                <form class="needs-validation was-validated"
-                                      novalidate="novalidate">
-
-                                    <div class="row">
-
-                                        <div class="col-12 col-md-6">
-
-                                            <label class="form-label" for="facebook"><i class="bi bi-facebook text-primary"></i>
-                                            Enter facebook username</label>
-                                            <input class="form-control" type="text" name="facebook" placeholder="fbusername"
-                                                   pattern="^[a-zA-Z]{5,45}$"
-                                                   id="facebook"
-                                                   value="<?php echo htmlspecialchars('facebook');?>"/>
-                                            <div class="invalid-feedback">Enter facebook username</div>
-                                            <div class="valid-feedback">OK!</div>
-
-
-                                        </div><!-- Facebook -->
-                                        <div class="col-12 col-md-6">
-
-                                            <label class="form-label" for="telegram"><i class="bi bi-telegram text-info"></i>
-                                            Enter telegram username</label>
-                                            <input class="form-control" type="text" name="telegram" placeholder="telegram"
-                                                   pattern="^[a-zA-Z]{5,45}$"
-                                                   id="telegram"
-                                                   value="<?php echo htmlspecialchars('telegram');?>"/>
-                                            <div class="invalid-feedback">Enter telegram username</div>
-                                            <div class="valid-feedback">OK!</div>
-
-
-                                        </div><!-- Telegram -->
-                                        <div class="col-12 col-md-6">
-
-                                            <label class="form-label" for="instagram"><i class="bi bi-instagram"></i>
-                                            Enter Instagram username</label>
-                                            <input class="form-control" type="text" name="telegram" placeholder="Instagram"
-                                                   pattern="^[a-zA-Z]{5,45}$"
-                                                   id="instagram"
-                                                   value="<?php echo htmlspecialchars('Instagram');?>"/>
-                                            <div class="invalid-feedback">Enter Instagram username</div>
-                                            <div class="valid-feedback">OK!</div>
-
-
-                                        </div><!-- Instagram -->
-                                        <div class="col-12 col-md-6">
-
-                                            <label class="form-label" for="youTube"><i class="bi bi-youtube text-danger"></i>
-                                            Enter YouTube Profile URL</label>
-                                            <input class="form-control" type="text" name="youTube" placeholder="YouTube"
-                                                   pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
-                                                   id="youTube"
-                                                   value="<?php echo htmlspecialchars('YouTube');?>"/>
-                                            <div class="invalid-feedback">Enter YouTube profile URL</div>
-                                            <div class="valid-feedback">OK!</div>
-
-
-                                        </div><!-- YouTube -->
-
-                                    </div> <!--Facebook, Telegram END -->
-                                    <div class="mb-3">
-                                        <button class="btn btn-primary" type="submit" disabled>Save Changes</button>
-                                    </div><!--Save Changes BTN -->
-
-                                </form>
-
-                            </div><!--Social Media-->
-
-                            <div class="row border rounded-3 m-3 p-3">
-
-                                <div class="col-12 col-md-6">
-                                    <h3>Change Email</button></h3>
-                                    <form class="needs-validation was-validated"
-                                          novalidate="novalidate">
-
-                                        <div class="row">
-
-                                            <div class="col-12">
-                                                <div class="bg-white p-2 border rounded-3">
-                                                    <?php echo htmlspecialchars('Your email: email@mail.com');?>
-                                                </div>
-                                            </div>
-                                            <div class="col-12">
-
-                                                <label class="form-label" for="changeEmail"><i class="bi bi-envelope"></i>
-                                                    New Email</label>
-                                                <input class="form-control" type="text" name="email" placeholder="new@email.com"
-                                                       pattern="^([a-zA-Z0-9_.-])+@([a-zA-Z])+[.]([a-zA-Z]{2,4})+$"
-                                                       id="changeEmail"/>
-                                                <div class="invalid-feedback">Enter Email</div>
-                                                <div class="valid-feedback">OK!</div>
-
-
-                                            </div><!-- Email Input -->
-
-                                        </div>
-                                        <div class="mb-3">
-                                            <button class="btn btn-primary" type="submit" disabled>Save Changes</button>
-                                        </div><!--Save Changes BTN -->
-
-                                    </form>
-                                </div><!--Change Email END -->
-                                <div class="col-12 col-md-6">
-                                    <h3>Change Password</button></h3>
-                                    <form class="needs-validation was-validated"
-                                          novalidate="novalidate">
-
-                                        <div class="row">
-
-                                            <div class="col-12">
-
-                                                <label class="form-label" for="newPassword"><i class="bi bi-key"></i>
-                                                    Enter New Password</label>
-                                                <input class="form-control" type="text" name="newPassword" placeholder="newPassword"
-                                                       id="newPassword"/>
-                                                <div class="invalid-feedback">Enter New Password</div>
-                                                <div class="valid-feedback">OK!</div>
-
-                                            </div><!-- New Password Input -->
-                                            <div class="col-12">
-
-                                                <label class="form-label" for="newPasswordAgain"><i class="bi bi-key"></i>
-                                                    Enter New Password Again</label>
-                                                <input class="form-control" type="text" name="newPassword" placeholder="new password again"
-                                                       id="newPasswordAgain"/>
-                                                <div class="invalid-feedback">Enter New Password again</div>
-                                                <div class="valid-feedback">OK!</div>
-
-                                            </div><!-- New Password again Input -->
-                                            <div class="col-12">
-
-                                                <label class="form-label" for="currentPass"><i class="bi bi-key"></i>
-                                                    Enter New Password Again</label>
-                                                <input class="form-control" type="text" name="newPassword" placeholder="Current password"
-                                                       id="currentPass"/>
-                                                <div class="invalid-feedback">Enter Current Password</div>
-                                                <div class="valid-feedback">OK!</div>
-
-                                            </div><!-- Current Password Input -->
-
-                                        </div>
-                                        <div class="mb-3">
-                                            <button class="btn btn-primary" type="submit" disabled>Save Changes</button>
-                                        </div><!--Save Changes BTN -->
-
-                                    </form>
-                                </div><!--Change Password END -->
-
-                            </div><!--Email & Password -->
-
+                    </div><!-- Last Name -->
+                    <div class="col-12">
+                        <div class="mb-3">
+                            <label for="aboutMe" class="form-label">About me</label>
+                            <textarea class="form-control is-invalid" id="aboutMe"
+                                      maxlength="140" placeholder="Required example textarea"
+                                      required><?php echo htmlspecialchars($aboutMe);?></textarea>
+                            <div class="text-muted">Add brief description for your profile.</div>
                         </div>
+                    </div><!--About me END-->
+                    <div class="mb-3">
+                        <button class="btn btn-primary" type="submit" disabled>Save Changes</button>
+                    </div><!--Save Changes BTN -->
+
+                </form>
+                <!--Avatar, F name L name about END-->
+
+                <form class="row g-3 bg-white rounded-3 shadow p-4 mb-5 needs-validation was-validated" novalidate="novalidate">
+
+                    <h3>Social media profile</button></h3>
+
+                    <div class="col-md-6">
+
+                        <label class="form-label" for="facebook"><i class="bi bi-facebook text-primary"></i>
+                            Enter Facebook username</label>
+                        <input class="form-control" type="text" name="facebook"
+                               placeholder="fbusername"
+                               pattern="^[a-zA-Z]{5,45}$" id="facebook"
+                               value="<?php echo htmlspecialchars('facebook');?>"/>
+                        <div class="invalid-feedback">Enter facebook username</div>
+                        <div class="valid-feedback">OK!</div>
+
+                    </div><!-- Facebook -->
+                    <div class="col-md-6">
+
+                        <label class="form-label" for="telegram"><i class="bi bi-telegram text-info"></i>
+                            Enter Telegram username</label>
+                        <input class="form-control" type="text" name="telegram" placeholder="telegram"
+                               pattern="^[a-zA-Z]{5,45}$" id="telegram"
+                               value="<?php echo htmlspecialchars('telegram');?>"/>
+                        <div class="invalid-feedback">Enter telegram username</div>
+                        <div class="valid-feedback">OK!</div>
+
+                    </div><!-- Telegram -->
+                    <div class="col-md-6">
+
+                        <label class="form-label" for="instagram"><i class="bi bi-instagram"></i>
+                            Enter Instagram username</label>
+                        <input class="form-control" type="text" name="telegram" placeholder="Instagram"
+                               pattern="^[a-zA-Z]{5,45}$" id="instagram"
+                               value="<?php echo htmlspecialchars('Instagram');?>"/>
+                        <div class="invalid-feedback">Enter Instagram username</div>
+                        <div class="valid-feedback">OK!</div>
+
+                    </div><!-- Instagram -->
+                    <div class="col-md-6">
+
+                        <label class="form-label" for="youTube"><i class="bi bi-youtube text-danger"></i>
+                            Enter YouTube Profile URL</label>
+                        <input class="form-control" type="text" name="youTube" placeholder="YouTube"
+                               pattern="https:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{2,3}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)"
+                               id="youTube"
+                               value="<?php echo htmlspecialchars('YouTube');?>"/>
+                        <div class="invalid-feedback">Enter YouTube profile URL</div>
+                        <div class="valid-feedback">OK!</div>
+
+                    </div><!-- YouTube -->
+                    <div class="mb-3">
+                        <button class="btn btn-primary" type="submit" disabled>Save Changes</button>
+                    </div><!--Save Changes BTN -->
+
+                </form>
+                <!--Social Media-->
+
+                <div class="row g-4 bg-white rounded-3 shadow p-4 mb-5">
+
+                    <div class="col-md-6">
+                        <form class="row g-3 needs-validation was-validated" novalidate="novalidate">
+
+                            <h3>Change Email</h3>
+
+                            <div class="row">
+                                <div class="p-2 border rounded-3">
+                                    <?php echo htmlspecialchars('Current Email: email@mail.com');?>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <label class="form-label" for="changeEmail">
+                                    <i class="bi bi-envelope"></i> New Email</label>
+                                <input class="form-control" type="text" name="email" placeholder="new@email.com"
+                                       pattern="^([a-zA-Z0-9_.-])+@([a-zA-Z])+[.]([a-zA-Z]{2,4})+$"
+                                       id="changeEmail" required/>
+                                <div class="invalid-feedback">Enter Email</div>
+                                <div class="valid-feedback">OK!</div>
+
+                            </div><!-- Email Input -->
+                            <div class="mb-3">
+                                <button class="btn btn-primary" type="submit" disabled>Save Changes</button>
+                            </div><!--Save Changes BTN -->
+
+                        </form>
+                        <!--Change Email END -->
                     </div>
+
+                    <div class="col-md-6">
+                        <form class="row g-3 needs-validation was-validated" novalidate="novalidate">
+
+                            <h3>Change Password</button></h3>
+
+                            <div class="col-12">
+                                <label class="form-label" for="newPassword"><i class="bi bi-key"></i>
+                                    Enter New Password</label>
+                                <input class="form-control" type="text" name="newPassword" placeholder="New Password"
+                                       id="newPassword" required/>
+                                <div class="invalid-feedback">Enter New Password</div>
+                                <div class="valid-feedback">OK!</div>
+
+                            </div><!-- New Password Input -->
+                            <div class="col-12">
+
+                                <label class="form-label" for="newPasswordAgain"><i class="bi bi-key"></i>
+                                    Enter New Password Again</label>
+                                <input class="form-control" type="text" name="newPassword" placeholder="New Password Again"
+                                       id="newPasswordAgain" required/>
+                                <div class="invalid-feedback">Enter New Password again</div>
+                                <div class="valid-feedback">OK!</div>
+
+                            </div><!-- New Password again Input -->
+                            <div class="col-12">
+
+                                <label class="form-label" for="currentPass"><i class="bi bi-key"></i>
+                                    Enter Current Password</label>
+                                <input class="form-control" type="text" name="newPassword" placeholder="Current password"
+                                       id="currentPass" required/>
+                                <div class="invalid-feedback">Enter Current Password</div>
+                                <div class="valid-feedback">OK!</div>
+
+                            </div><!-- Current Password Input -->
+                            <div class="mb-3">
+                                <button class="btn btn-primary" type="submit" disabled>Save Changes</button>
+                            </div><!--Save Changes BTN -->
+
+                        </form>
+                        <!--Change Password END -->
+                    </div>
+
                 </div>
+                <!-- Email And Password -->
+
             </div>
+
         </div>
-    </div>
+        <!--The Featured Ad Space-->
+        <?php include "template/featured_ad_space.php"; ?>
 </section>
 
 <?php

@@ -1,0 +1,69 @@
+//Footer
+#footer{
+  .footer-soc-icons{
+    a{
+      font-size: 1.5rem;
+      color: $neutralBlue;
+      &:hover{
+        transform: scale(1.1);
+      }
+    }
+  }
+  .f-nav{
+    a{
+      color: lightgray;
+      text-decoration: none;
+      &:hover{
+        color: #f6faff;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+//Back To Top Button
+.back-top{
+  cursor: pointer;
+  position: fixed !important;
+  bottom: 40px;
+  right: 40px;
+  display: block;
+  z-index: 99;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transform: translateY(50%);
+  transform: translateY(50%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background: rgba(6, 106, 201, 0.2);
+  color: #066ac9;
+  border-radius: 10%;
+  width: 52px;
+  height: 52px;
+  line-height: 52px;
+  text-align: center;
+}
+.back-top-show {
+  cursor: pointer;
+  position: fixed !important;
+  bottom: 40px;
+  right: 40px;
+  display: block;
+  z-index: 99;
+  background: rgba(6, 106, 201, 0.2);
+  color: #066ac9;
+  border-radius: 10%;
+  width: 52px;
+  height: 52px;
+  line-height: 52px;
+  text-align: center;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  &:hover{
+    background-color: #066ac9;
+    i{color: white;}
+  }
+}

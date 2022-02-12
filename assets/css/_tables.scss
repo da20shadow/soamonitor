@@ -1,0 +1,32 @@
+//My Investments Table
+#projects-table{
+  width: 100%;
+  thead{
+    th{
+      background-color:#e2e3e5;
+      color: $primaryTextColor;
+      padding: 15px;
+    }
+  }
+  tbody{
+    tr{
+      border-bottom: 1px solid #e2e3e5;
+      &:hover{
+        background-color:#ebeff3;
+      }
+    }
+    td{
+      padding:7px 10px;
+      font-weight: 600;
+    }
+  }
+
+}
+//My Ads table
+#ads-table{
+@extend #projects-table;
+}
+//My referrals Table
+#referralsTable{
+  @extend #projects-table;
+}
