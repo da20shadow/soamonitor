@@ -6,17 +6,27 @@ if(document.getElementById('account')){
     function convertPoints(){
         let points = document.getElementById('points').value;
 
+        console.log("The type of points is " + typeof(points));
+        console.log("Amount of points: " + points);
+
         if (points < 0){
-            alert("0 points lol not possible!")
+            alert("0 points lol not possible!");
         }else if (points < 100){
-            alert("less than 100 impossible")
+            alert("Less than 100 impossible");
+        }else if (points > 100000){
+            alert("Max convert at once is 100 000!");
         }else if (points === ""){
-            alert("Enter points please!")
+            alert("Enter points please!");
+        }else if (points === undefined){
+            alert("Enter points please!");
+        }else if (points === 0){
+            alert("Enter points please!");
         }else{
             let data = {points: points};
+            console.log(data);
 
             let httpR = new XMLHttpRequest(); // simplified for clarity
-            let url = "../includes/convert_points.php";
+            let url = "includes/convert_points.php";
             httpR.open("POST", url, true); // sending as POST
             httpR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
@@ -32,71 +42,85 @@ if(document.getElementById('account')){
     }
 
     //Calculate converted points
-    function calculateConvertedPoints(input){
+    let pointsInput = document.getElementById("points");
+    pointsInput.addEventListener("keyup",calculateConvertedPoints);
+    function calculateConvertedPoints(){
+        let input = document.getElementById('points').value;
+
         let membership = document.getElementById("membership").innerText;
         let points = document.getElementById('points');
         let message = document.getElementById("errorPoints");
         let convertedPoints = document.getElementById("convertedPoints")
 
+        function addInvalidStyle(){
+            if (points.classList.contains('is-valid')){
+                // points.classList.remove("is-valid");
+                points.classList.add("is-invalid");
+            }
+            if (message.classList.contains("valid-feedback")){
+                // message.classList.remove("valid-feedback");
+                message.classList.add("invalid-feedback");
+            }
+        }
+
         if (membership === "VIP"){
             if(!input.match(/^[0-9]+$/)){
 
-                points.classList.remove("is-valid");
-                points.classList.add("is-invalid");
-                message.classList.remove("valid-feedback");
-                message.classList.add("invalid-feedback");
+                addInvalidStyle();
 
                 message.innerHTML = "Enter Valid Amount of points!";
                 convertedPoints.innerHTML = "Points to 0.00 USD";
             }else if (input < 100){
-                points.classList.remove("is-valid");
-                points.classList.add("is-invalid");
-                message.classList.remove("valid-feedback");
-                message.classList.add("invalid-feedback");
+
+                addInvalidStyle();
+
                 convertedPoints.innerHTML = "Points to 0.00 USD";
                 message.innerHTML = "You can convert minimum 100 points!"
+
             }else if (input > 100000){
-                points.classList.remove("is-valid");
-                points.classList.add("is-invalid");
-                message.classList.remove("valid-feedback");
-                message.classList.add("invalid-feedback");
+                console.log("Max 100 000");
+
+                addInvalidStyle();
+
                 convertedPoints.innerHTML = "Points to 0.00 USD";
                 message.innerHTML = "You can convert maximum 100 000 points at once!"
             }else{
+
                 points.classList.remove("is-invalid");
                 points.classList.add("is-valid");
+
                 message.classList.remove("invalid-feedback");
                 message.classList.add("valid-feedback");
+
                 message.innerHTML = "Good!";
                 convertedPoints.innerHTML = "Points to " + (input * 0.001).toFixed(3) + " USD";
             }
         }else{
             if(!input.match(/^[0-9]+$/)){
-                points.classList.remove("is-valid");
-                points.classList.add("is-invalid");
-                message.classList.remove("valid-feedback");
-                message.classList.add("invalid-feedback");
+
+                addInvalidStyle();
+
                 message.innerHTML = "Enter Valid Amount of points!";
                 convertedPoints.innerHTML = "Points to 0.00 USD";
             }else if (input < 100){
-                points.classList.remove("is-valid");
-                points.classList.add("is-invalid");
-                message.classList.remove("valid-feedback");
-                message.classList.add("invalid-feedback");
+
+                addInvalidStyle();
+
                 convertedPoints.innerHTML = "Points to 0.00 USD";
                 message.innerHTML = "You can convert minimum 100 points!"
             }else if (input > 100000){
-                points.classList.remove("is-valid");
-                points.classList.add("is-invalid");
-                message.classList.remove("valid-feedback");
-                message.classList.add("invalid-feedback");
+
+                addInvalidStyle();
+
                 convertedPoints.innerHTML = "Points to 0.00 USD";
                 message.innerHTML = "You can convert maximum 100 000 points at once!"
             }else{
                 points.classList.remove("is-invalid");
                 points.classList.add("is-valid");
+
                 message.classList.remove("invalid-feedback");
                 message.classList.add("valid-feedback");
+
                 message.innerHTML = "Good!";
                 convertedPoints.innerHTML = (input * 0.0002).toFixed(3) + " USD";
             }
@@ -207,6 +231,24 @@ if(document.getElementById('account')){
     }
 
 }else if (document.getElementById('upgrade_plan')){
+
+let upgradeButton = document.getElementById("upgradeBtn");
+upgradeButton.addEventListener("click",()=>{
+
+    let balance = document.querySelector('h3').getAttribute('data-balance');
+
+    console.log("Balance is " + balance);
+
+    let planPrice = document.getElementById("planPrice").innerText;
+    console.log("Plan price is " + planPrice);
+
+    if (parseFloat(balance) < parseFloat(planPrice)){
+        let diference = planPrice - balance;
+        alert("Not Enough Money! You need $" + diference + "more!")
+    }else{
+        alert("Your balance is enough!")
+    }
+});
 
 }else if (document.getElementById('view_article')){
     let reply = document.getElementById('reply_1');

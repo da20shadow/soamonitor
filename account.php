@@ -138,8 +138,7 @@ include ('includes/header.php');
                         <div class="m-2">
                             <label class="form-label" for="points">Points</label>
                             <input class="form-control is-invalid" type="number" name="points" placeholder="100"
-                                   pattern="^([0-9]){4,20}$"
-                                   id="points" required="required" onkeyup="calculateConvertedPoints(this.value)"/>
+                                   pattern="^([0-9]){4,20}$" id="points" required="required""/>
                             <div id="errorPoints" class="invalid-feedback">Enter Amount Of Points!</div>
 
                         </div><!-- Points to convert END-->

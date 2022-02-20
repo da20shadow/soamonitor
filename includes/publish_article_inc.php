@@ -2,10 +2,11 @@
 require_once "../core/init.php";
 
 $receivedData = file_get_contents("php://input");
-
 $article = json_decode($receivedData,true);
+$title = $article['title'];
+$content = $article['body'];
 
-if (isset($article)){
+if ($article){
 
     $title = $getFromFunc->checkInput($article['title']);
     $content = $getFromFunc->checkInput($article['content']);

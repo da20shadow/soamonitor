@@ -10,6 +10,15 @@ $userInfo = $getFromUser->getUserInfo($user_id);
 
 $balance = $userInfo['balance'];
 
+$basic_price = 9.99;
+$basic_price_discounted = 59.88;
+
+$pro_price = 23.99;
+$pro_price_discounted = 143.88;
+
+$vip_price = 39.99;
+$vip_price_discounted = 239.88;
+
 $title ="Upgrade Plan";
 $pageId = "upgrade_plan";
 
@@ -23,6 +32,92 @@ if (isset($_GET["plan_id"]) && isset($_GET["price"])){
 
     if ($plan_id == "1"){
         if ($price == "full"){ ?>
+            <!--Pricing Card 1 START-->
+
+            <div class="col-md-6 col-xl-4 m-auto">
+                <div class="card border rounded-3 p-2 p-sm-4 h-100 shadow">
+                    <!--Card Header-->
+                    <div class="card-header p-0 rounded-3">
+
+                        <!-- Account balance info -->
+                        <div class="justify-content-center align-items-center p-3 bg-light rounded-2">
+                            <!-- Info -->
+
+                            <h4 class="mb-0 fw-bold text-center">Account Balance:</h4>
+                            <h3 id="balance" data-balance="<?php echo htmlspecialchars($balance);?>"
+                                class="text-success mb-0 plan-price fw-bold text-center">
+                                $<?php echo htmlspecialchars($balance); ?></h3>
+
+                        </div>
+
+                        <!--Divider -->
+                        <div class="position-relative my-3 text-center">
+                            <hr>
+                            <p class="position-absolute top-50 start-50 translate-middle bg-body px-3 fs-5">
+                                Plan:
+                            </p>
+                        </div>
+
+                        <!-- Price and Info -->
+                        <div class="d-flex justify-content-between align-items-center p-3 bg-light rounded-2">
+                            <!-- Info -->
+                            <div>
+                                <h5 class="mb-0 fw-bold">Basic</h5>
+                                <div class="badge bg-dark bg-gradient mb-0 rounded-pill fw-normal">Most popular</div>
+                            </div>
+                            <!-- Price -->
+                            <div>
+                                <h4 class="text-success mb-0 plan-price fw-bold">
+                                    $<span id="planPrice"><?php echo htmlspecialchars($basic_price); ?></span></h4>
+                                <p class="small mb-0">/ per month</p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--Divider -->
+                    <div class="position-relative my-3 text-center">
+                        <hr>
+                        <p class="small position-absolute top-50 start-50 translate-middle bg-body px-3">
+                            Plan includes
+                        </p>
+                    </div>
+                    <!--Card Body -->
+                    <div class="card-body pt-0">
+
+                        <ul class="list-unstyled mt-2 mb-0">
+                            <li class="mb-3 h6 fw-light"><i class="bi bi-patch-check-fill text-success me-2"></i>Up to 5% Referral Purchases Commissions</li>
+                            <li class="mb-3 h6 fw-light"><i class="bi bi-patch-check-fill text-success me-2"></i>Up to 5% Referral Activity Coins</li>
+                            <li class="mb-3 h6 fw-light"><i class="bi bi-patch-check-fill text-success me-2"></i>Convert Coins 1000 => $1.00</li>
+                            <li class="mb-3 h6 fw-light"><i class="bi bi-patch-check-fill text-success me-2"></i>Full Content Access (Priceless)</li>
+                            <li class="mb-3 h6 fw-light"><i class="bi bi-patch-check-fill text-success me-2"></i>Access to Investments Management Tools</li>
+                            <li class="mb-3 h6 fw-light"><i class="bi bi-patch-check-fill text-success me-2"></i>Access to Private Telegram Chat Group</li>
+                        </ul>
+
+                    </div>
+
+                    <!--Card Footer -->
+                    <div class="card-footer bg-white text-center d-grid pb-0">
+
+                        <!-- Change Plan -->
+                        <form class="was-validated" action="">
+                            <div class="mb-3">
+                                <label for="firstPlan">Change Subscription Plan:</label>
+                                <select class="form-select form-select-lg mb-3 shadow-none" name="plan" id="firstPlan" required>
+                                    <option value="">Please, Select Subscription</option>
+                                    <option value="1" selected>1 Month ($9,99)</option>
+                                    <option value="2">1 Year ($59,88) -50% ($4,99/month)</option>
+                                </select>
+                                <div class="invalid-feedback">Please, Select Subscription</div>
+                            </div>
+                        </form>
+
+                        <a href="upgrade_plan.php?plan_id=1&price=full" id="upgradeBtn" type="button"
+                           class="btn btn-lg btn-secondary bg-gradient mb-0">Upgrade</a>
+
+                    </div>
+                </div>
+            </div>
+
             <section>
                 <div class="container">
                     <div class="row g-4">
@@ -61,7 +156,8 @@ if (isset($_GET["plan_id"]) && isset($_GET["price"])){
                     <div class="row g-4">
                         <div class="col-md-6 text-center m-auto">
 
-                            <h4 class="mt-5">Your Balance: $<?php echo htmlspecialchars($balance); ?></h4>
+                            <h4 id="balance" data-balance="<?php echo htmlspecialchars($balance);?>"
+                                class="mt-5">Your Balance: $<?php echo htmlspecialchars($balance); ?></h4>
 
                             <h2>Chosen Plan: Basic 1 Year $59,88 -50% (1 Month ($4,99))</h2>
                             <p class="text-danger">Not Enough Money in your Account Balance, Add More Funds First!</p>
@@ -100,7 +196,8 @@ if (isset($_GET["plan_id"]) && isset($_GET["price"])){
                         <div class="row g-4">
                             <div class="col-md-6 text-center m-auto">
 
-                                <h4 class="mt-5">Your Balance: $<?php echo htmlspecialchars($balance); ?></h4>
+                                <h4 id="balance" data-balance="<?php echo htmlspecialchars($balance);?>"
+                                    class="mt-5">Your Balance: $<?php echo htmlspecialchars($balance); ?></h4>
 
                                 <h2>Chosen Plan: Pro 1 Month ($23,99))</h2>
                                 <p class="text-danger">Not Enough Money in your Account Balance, Add More Funds First!</p>
@@ -133,7 +230,8 @@ if (isset($_GET["plan_id"]) && isset($_GET["price"])){
                         <div class="row g-4">
                             <div class="col-md-6 text-center m-auto">
 
-                                <h4 class="mt-5">Your Balance: $<?php echo htmlspecialchars($balance); ?></h4>
+                                <h4 id="balance" data-balance="<?php echo htmlspecialchars($balance);?>"
+                                    class="mt-5">Your Balance: $<?php echo htmlspecialchars($balance); ?></h4>
 
                                 <h2>Chosen Plan: Pro 1 Year $143,88 -50% (1 Month ($11,99))</h2>
                                 <p class="text-danger">Not Enough Money in your Account Balance, Add More Funds First!</p>
@@ -172,7 +270,8 @@ if (isset($_GET["plan_id"]) && isset($_GET["price"])){
                     <div class="row g-4">
                         <div class="col-md-6 text-center m-auto">
 
-                            <h4 class="mt-5">Your Balance: $<?php echo htmlspecialchars($balance); ?></h4>
+                            <h4 id="balance" data-balance="<?php echo htmlspecialchars($balance);?>"
+                                class="mt-5">Your Balance: $<?php echo htmlspecialchars($balance); ?></h4>
 
                             <h2>Chosen Plan: Pro 1 Month ($39,99))</h2>
                             <p class="text-danger">Not Enough Money in your Account Balance, Add More Funds First!</p>
@@ -205,7 +304,8 @@ if (isset($_GET["plan_id"]) && isset($_GET["price"])){
                     <div class="row g-4">
                         <div class="col-md-6 text-center m-auto">
 
-                            <h4 class="mt-5">Your Balance: $<?php echo htmlspecialchars($balance); ?></h4>
+                            <h4 id="balance" data-balance="<?php echo htmlspecialchars($balance);?>"
+                                class="mt-5">Your Balance: $<?php echo htmlspecialchars($balance); ?></h4>
 
                             <h2>Chosen Plan: Pro 1 Year $239,88 -50% (1 Month ($19,99))</h2>
                             <p class="text-danger">Not Enough Money in your Account Balance, Add More Funds First!</p>
