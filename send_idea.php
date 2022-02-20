@@ -10,7 +10,7 @@ if (isset($_SESSION['username'])){
 
             <div class="row justify-content-center">
 
-                <h2 class="text-center mb-3 fw-bold">Send Good Idea & Earn <i class="bi bi-coin"></i></h2>
+                <h2 class="text-center mb-3 fw-bold">Send Good Ideas & Earn <i class="bi bi-coin text-warning bg-gradient"></i></h2>
 
                 <div class="accordion accordion-flush m-3" id="accordionIdeaFaq">
                     <div class="accordion-item">
@@ -126,9 +126,9 @@ if (isset($_SESSION['username'])){
 
                             <!-- Add Button-->
                             <div class="row g-2 my-4">
-                                <button id="addAdBtn" type="submit" name="add" class="btn btn-success ">Send</button>
-                                <button type="button" class="btn btn-primary" onclick="window.location='account.php'">
-                                    <i class="bi bi-arrow-return-left"></i> Back To My Ideas List</button>
+                                <button id="addAdBtn" type="submit" name="add" class="btn btn-primary bg-gradient">Send</button>
+                                <button type="button" class="btn btn-secondary bg-gradient" onclick="window.location='earnings.php'">
+                                    <i class="bi bi-arrow-return-left"></i> Back to Earnings</button>
                             </div><!-- Login Button END -->
 
 

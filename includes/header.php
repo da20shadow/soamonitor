@@ -13,6 +13,7 @@ if (isset($_SESSION['username'])){
     $first_name = $userInfo['first_name'];
     $last_name = $userInfo['last_name'];
     $email = $userInfo['email'];
+    $membership = $userInfo['membership'];
 }
 
 ?>
@@ -75,7 +76,9 @@ if (isset($_SESSION['username'])){
                                 <a class="dropdown-item" href="add_funds.php"><i class="bi bi-coin"></i> Add Funds</a>
                                 <a class="dropdown-item" href="add_new_ad.php"><i class="bi bi-badge-ad"></i> New Ad</a>
                                 <a class="dropdown-item" href="" data-bs-toggle="modal" data-bs-target="#addProjectModal"><i class="bi bi-clipboard-data"></i> New Project</a>
+                                <?php if ($membership == "VIP" || $membership == "Admin") {?>
                                 <a class="dropdown-item" href="add_new_post.php"><i class="bi bi-pencil-square"></i> Blog Post</a>
+                                <?php } ?>
                             </div>
                         </div><!--Add New ad, post.. Dropdown END -->
                         <?php }else{?>

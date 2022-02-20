@@ -32,13 +32,13 @@
                         </div><!-- Deposit END-->
                         <!-- Add Button-->
                         <div class="row g-2 my-1">
-                            <button id="addProject" type="submit" name="add" class="btn btn-success">Add</button>
+                            <button id="addProject" type="submit" name="add" class="btn btn-primary bg-gradient">Add</button>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-success" id="addProjectAgain" style="display:none;">Add New</button>
+                <button class="btn btn-primary bg-gradient" id="addProjectAgain" style="display:none;">Add New</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
@@ -106,7 +106,7 @@
                         </div><!--Category-->
                         <!-- Report Button-->
                         <div class="row g-2 my-4">
-                            <button type="submit" name="add" class="btn btn-danger ">Report</button>
+                            <button type="submit" name="add" class="btn btn-danger bg-gradient">Report</button>
                         </div><!-- Login Button END -->
 
                     </div>

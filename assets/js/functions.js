@@ -1,5 +1,36 @@
 if(document.getElementById('account')){
 
+    //Convert Points Ajax
+    let convertBtn = document.getElementById('convertPointsBtn');
+    convertBtn.addEventListener("click",convertPoints);
+    function convertPoints(){
+        let points = document.getElementById('points').value;
+
+        if (points < 0){
+            alert("0 points lol not possible!")
+        }else if (points < 100){
+            alert("less than 100 impossible")
+        }else if (points === ""){
+            alert("Enter points please!")
+        }else{
+            let data = {points: points};
+
+            let httpR = new XMLHttpRequest(); // simplified for clarity
+            let url = "../includes/convert_points.php";
+            httpR.open("POST", url, true); // sending as POST
+            httpR.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+            httpR.onreadystatechange = function() { //Call a function when the state changes.
+                if(httpR.readyState === 4 && httpR.status === 200) { // complete and no errors
+                    // alert(httpX.responseText); // some processing here, or whatever you want to do with the response
+                    document.getElementById('convertedPointsSuccess').innerHTML = httpR.responseText;
+                }
+            };
+            data = JSON.stringify(data);
+            httpR.send(data);
+        }
+    }
+
     //Calculate converted points
     function calculateConvertedPoints(input){
         let membership = document.getElementById("membership").innerText;

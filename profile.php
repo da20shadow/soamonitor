@@ -28,11 +28,11 @@ if ($userInfo){
 
 ?>
 <div class="container" style="margin-top:55px;">
-    <div class="row">
-        <div class="col-4">
+    <div class="row g-5">
+        <div class="col-12 col-lg-4">
             <div class="card text-center">
                 <!-- card body start -->
-                <div class="card-body">
+                <div class="card-body shadow-lg">
                     <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle avatar-lg img-thumbnail"
                          alt="profile-image" width="128px" height="128px">
 
@@ -80,10 +80,10 @@ if ($userInfo){
                 </div> <!-- end card-body -->
             </div>
         </div>
-        <div class="col-8">
+        <div class="col-12 col-lg-8">
             <h2>Member Activity <i class="bi bi-activity ms-2"></i></h2>
             <!--Stat -->
-            <div class="row">
+            <div class="row mt-3 g-5 d-flex flex-wrap">
                 <div class="col shadow p-3 m-1 bg-body rounded text-center">
                     <p class="fs-5 fw-bold">9</p>
                     Blog Posts

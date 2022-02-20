@@ -178,7 +178,7 @@ include ('includes/header.php');
                                 <div class="valid-feedback">OK!</div>
                             </div><!-- Select Payment Processor END-->
                             <div class="row g-2 my-1">
-                                <button type="submit" name="add" class="btn btn-success ">Withdrawal</button>
+                                <button type="submit" name="add" class="btn btn-primary bg-gradient ">Withdrawal</button>
                             </div><!-- Withdrawal Button END-->
                         </form>
                     </div>

@@ -42,7 +42,7 @@ if (isset($_SESSION['username'])){
                             </div><!--Select Payment Method-->
                             <!-- Add Funds Button-->
                             <div class="row g-2 my-4">
-                                <button id="addFundsBtn" type="submit" name="add" class="btn btn-success ">Add Funds</button>
+                                <button id="addFundsBtn" type="submit" name="add" class="btn btn-primary bg-gradient">Add Funds</button>
                             </div><!-- Add Funds Button END -->
 
 

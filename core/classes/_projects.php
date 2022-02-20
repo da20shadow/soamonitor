@@ -25,6 +25,25 @@ Class Project{
             return false;
         }
     }
+    //check if project name already added!
+    function checkIfProjectExist($investmentName,$investorID): bool
+    {
+        try {
+            $sql = "SELECT investment_name FROM investments WHERE investment_name = :investmentName AND investor_id = :investorID";
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->bindparam(':investmentName', $investmentName);
+            $stmt->bindparam(':investorID', $investorID);
+
+            $stmt->execute();
+            return true;
+
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+            return false;
+        }
+    }
+
     //Get All Investments By User ID
     public function getTotalUserInvestments($user_id){
         $sql = "SELECT * FROM investments WHERE investor_id = ? ORDER BY investment_added DESC";

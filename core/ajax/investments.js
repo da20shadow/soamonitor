@@ -43,11 +43,17 @@ $(function(){
 
         let id = $(e.target).attr("id");
 
-        $.post('includes/project_info.inc.php',
-            {project_id: id}, function (data, status){
-                $('#projectToDelete').show().html(data);
-                $('#projectToUpdate').show().html(data);
-            });
+        if (id === ""){
+            alert("Invalid project ID")
+        }else if (id === undefined){
+            alert("Invalid project id")
+        }else{
+            $.post('includes/project_info.inc.php',
+                {project_id: id}, function (data, status){
+                    $('#projectToDelete').show().html(data);
+                    $('#projectToUpdate').show().html(data);
+                });
+        }
 
         //Delete Project
         $('#deleteProject').off('click').click(function() {
@@ -81,22 +87,31 @@ $(function(){
             let amount = $('#editProjectAmount').val();
             let option = $('#editProjectAction').find(":selected").val();
 
-            $.post('includes/edit_project.inc.php',
-                {project_id: id, option:option, amount:amount}, function (data, status) {
-                    $('#editedProject').show().html(data);
-                    $('#editInvForm').hide();
-                    $('#editProjectAgain').show();
-                    // Refresh projects list
-                    $.ajax({
-                        url: "includes/view_investments.php",
-                        type: "POST",
-                        cache: false,
-                        success: function (data) {
-                            $('#investmentsList').html(data);
-                        }
-                    });
-                });
+            if (option === "" || option === undefined ){
 
+                alert("Please select option");
+
+            }else if (amount === undefined || amount === 0 || amount === "" || isNaN(amount || amount < 0)){
+
+                alert("Please, Enter amount!");
+
+            }else {
+                $.post('includes/edit_project.inc.php',
+                    {project_id: id, option:option, amount:amount}, function (data, status) {
+                        $('#editedProject').show().html(data);
+                        $('#editInvForm').hide();
+                        $('#editProjectAgain').show();
+                        // Refresh projects list
+                        $.ajax({
+                            url: "includes/view_investments.php",
+                            type: "POST",
+                            cache: false,
+                            success: function (data) {
+                                $('#investmentsList').html(data);
+                            }
+                        });
+                    });
+            }
         });
     });
     $('#editProjectAgain').click(function (){

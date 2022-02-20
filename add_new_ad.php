@@ -71,8 +71,8 @@ include ('includes/header.php');
 
                             <!-- Add Button-->
                             <div class="row g-2 my-4">
-                                <button id="addAdBtn" type="submit" name="add" class="btn btn-success ">Add</button>
-                                <button type="button" class="btn btn-primary" onclick="window.location='my_ads.php'">
+                                <button id="addAdBtn" type="submit" name="add" class="btn btn-primary bg-gradient">Add</button>
+                                <button type="button" class="btn btn-secondary bg-gradient" onclick="window.location='my_ads.php'">
                                     <i class="bi bi-arrow-return-left"></i> Back To My Ads</button>
                             </div><!-- Login Button END -->
 

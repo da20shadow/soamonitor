@@ -149,12 +149,12 @@ include ('includes/header.php');
                         </div><!-- points in dollars END-->
                         <!-- Save Button-->
                         <div class="row g-2 m-2">
-                            <button id="convertPointsBtn" type="submit" name="convert" class="btn btn-success"><i class="bi bi-arrow-repeat me-2"></i>Convert</button>
+                            <button id="convertPointsBtn" type="submit" name="convert" class="btn btn-primary bg-gradient"><i class="bi bi-arrow-repeat me-2"></i>Convert</button>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary bg-gradient" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

@@ -1,14 +1,5 @@
 <?php
-//$user_id = $_SESSION['user_id'];
-//$username = $_SESSION['username'];
-//
-//$user_id = $getFromFunc->checkInput($user_id);
-//$userInfo = $getFromUser->getUserInfo($user_id);
-//
-//$first_name = $userInfo['first_name'];
-//$last_name = $userInfo['last_name'];
-//$email = $userInfo['email'];
-$membership = $userInfo['membership'];
+
 $points = $userInfo['points'];
 $balance = $userInfo['balance'];
 
