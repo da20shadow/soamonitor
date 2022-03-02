@@ -54,7 +54,7 @@ if (isset($_SESSION['username'])){
                             </a>
                             <!-- Links -->
                             <div class="dropdown-menu shadow-lg" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item " href="#"><i class="bi bi-mouse2"></i> PTC sites</a>
+                                <a class="dropdown-item " href="ptc_categories.php"><i class="bi bi-mouse2"></i> PTC sites</a>
                                 <a class="dropdown-item " href="#"><i class="bi bi-pie-chart"></i> Revenue Share Sites</a>
                                 <a class="dropdown-item " href="#"><i class="bi bi-minecart-loaded"></i> Cloud Mining sites</a>
                                 <hr class="dropdown-divider">

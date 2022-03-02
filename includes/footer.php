@@ -142,7 +142,7 @@
                 <a href="index.php">
                     <img src="assets/img/logo.png" alt="SOA monitor Logo" style="width:160px; height:30px; filter: brightness(50%);">
                 </a>
-                <p class="fs-6 my-3">“Join us Now And Learn How We Make A Full-Time Job Working From Home Like A Boss. “</p>
+                <p class="fs-6 my-3 text-white">“Join us Now And Learn How We Make A Full-Time Job Working From Home Like A Boss. “</p>
                 <div class="footer-soc-icons d-flex">
                     <a href="" class="bi bi-facebook me-2 " title="Facebook Page"></a>
                     <a href="" class="bi bi-telegram me-2 " title="Telegram Channel"></a>
@@ -183,7 +183,7 @@
                 <h6 class="text-uppercase fw-bold mb-4">
                     Contact
                 </h6>
-                <p>
+                <p class="text-white">
                     <i class="bi bi-envelope me-2"></i>
                     support@soamonitor.com
                 </p>
@@ -217,6 +217,24 @@
 <div id="backToTopBtn" class="back-top">
     <i class="bi bi-arrow-up-short position-absolute top-50 start-50 translate-middle fs-4"></i>
 </div>
+
+<script>
+    //Back To Top
+    window.onscroll = function() {BackToTopFunction()};
+    function BackToTopFunction() {
+        console.log("Back To Top Function called!");
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            document.getElementById("backToTopBtn").className = "back-top-show";
+            let backToTop = document.getElementById('backToTopBtn');
+            backToTop.addEventListener('click',() => window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            }));
+        } else {
+            document.getElementById("backToTopBtn").className = "back-top";
+        }
+    }
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

@@ -8,7 +8,7 @@ include ('includes/header.php');
 
         <!-- Header Title & Description -->
         <div class="col-lg-6 col-md-12 position-relative mb-5">
-            <h1 class="fw-bold">The Best Place to Write,  Read, Learn and Earn</h1>
+            <h1 class="display-4 fw-bold">The Best Place to Write,  Read, Learn and Earn</h1>
 
             <p class="my-4 lead">Some text some text,
                 some text text  some text etc and little more text here because is needed of course

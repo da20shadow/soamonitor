@@ -112,6 +112,10 @@
   margin: 0;
 }
 
+h1, h2, h3, h4, p {
+  color: #002869;
+}
+
 body {
   background-color: #F2F7FF;
 }

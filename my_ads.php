@@ -75,6 +75,7 @@ include ('includes/header.php');
                                 </div><!--Add New Ad Button -->
                             </div>
                             <!--Ads Table-->
+                            <div class="table-responsive">
                             <table id="ads-table" class="table-hover mt-2">
                                 <thead>
                                 <tr class="shadow-sm">
@@ -125,6 +126,7 @@ include ('includes/header.php');
                                 </tr>
                                 </tbody>
                             </table>
+                            </div>
                             <!--Pagination-->
                             <div class="my-3">
                                 <nav aria-label="Page navigation example">

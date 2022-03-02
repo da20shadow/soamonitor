@@ -40,7 +40,7 @@ include ('includes/header.php');
                     <!-- Switch -->
                     <div class="form-check form-switch fs-3 ms-2 mb-0">
                         <input class="form-check-input mt-0 price-toggle"
-                               type="checkbox" id="upgradePriceSwitch" onchange="priceSwitcher()">
+                               type="checkbox" id="upgradePriceSwitch">
                     </div>
                     <!-- Label -->
                     <div class="position-relative">

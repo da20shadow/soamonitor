@@ -2,8 +2,7 @@ if(document.getElementById('account')){
 
     //Convert Points Ajax
     let convertBtn = document.getElementById('convertPointsBtn');
-    convertBtn.addEventListener("click",convertPoints);
-    function convertPoints(){
+    convertBtn.addEventListener("click",function convertPoints(){
         let points = document.getElementById('points').value;
 
         console.log("The type of points is " + typeof(points));
@@ -39,12 +38,11 @@ if(document.getElementById('account')){
             data = JSON.stringify(data);
             httpR.send(data);
         }
-    }
+    });
 
     //Calculate converted points
     let pointsInput = document.getElementById("points");
-    pointsInput.addEventListener("keyup",calculateConvertedPoints);
-    function calculateConvertedPoints(){
+    pointsInput.addEventListener("keyup",function calculateConvertedPoints(){
         let input = document.getElementById('points').value;
 
         let membership = document.getElementById("membership").innerText;
@@ -125,7 +123,8 @@ if(document.getElementById('account')){
                 convertedPoints.innerHTML = (input * 0.0002).toFixed(3) + " USD";
             }
         }
-    }
+    });
+
 
 }else if (document.getElementById('add_funds')){
 
@@ -133,9 +132,8 @@ if(document.getElementById('account')){
 
     // Validating adding new ad
     let selectedAdType = document.getElementById('adTypeSelect');
-    selectedAdType.addEventListener('change',addCallToAction);
-    function addCallToAction(){
-        let selectedAdType = document.getElementById('adTypeSelect');
+    selectedAdType.addEventListener('change',function addCallToAction(){
+
         let adImgURL = '<label class="form-label" for="adImgInput">Image URL</label>' +
             '<input class="form-control" type="text" name="adImg" '+
             'placeholder="https://site.com/image.gif" '+
@@ -156,7 +154,8 @@ if(document.getElementById('account')){
         }else{
             document.getElementById('adImgUrl').innerHTML= "";
         }
-    }
+    });
+
 
 }else if (document.getElementById('add_new_post')){
 
@@ -205,8 +204,7 @@ if(document.getElementById('account')){
 
     //Upgrade Price Switcher
     let priceSwitch = document.getElementById('upgradePriceSwitch');
-    priceSwitch.addEventListener('change',priceSwitcher);
-    function priceSwitcher(){
+    priceSwitch.addEventListener('change',function priceSwitcher(){
         let priceElement = document.querySelectorAll('.plan-price');
         let priceSwitch = document.getElementById('upgradePriceSwitch');
         let plan1a = document.querySelector('#firstPlanA');
@@ -228,7 +226,8 @@ if(document.getElementById('account')){
             plan2a.href="upgrade_plan.php?plan_id=2&price=full";
             plan3a.href="upgrade_plan.php?plan_id=3&price=full";
         }
-    }
+    });
+
 
 }else if (document.getElementById('upgrade_plan')){
 
@@ -251,8 +250,6 @@ upgradeButton.addEventListener("click",()=>{
 });
 
 }else if (document.getElementById('view_article')){
-    let reply = document.getElementById('reply_1');
-    reply.addEventListener("click",openCommentBox);
 
     let commentBox = "<div class=\"form-floating mt-4 mx-3\">\n" +
         "                <textarea class=\"form-control\" placeholder=\"Join the discussion\" id=\"floatingTextarea2\" style=\"height: 100px\"></textarea>\n" +
@@ -263,50 +260,10 @@ upgradeButton.addEventListener("click",()=>{
         "                <button type=\"button\" class=\"btn btn-outline-primary\">Publish</button>\n" +
         "            </div>";
 
-    function openCommentBox(){
+    let reply = document.getElementById('reply_1');
+    reply.addEventListener("click",function openCommentBox(){
         document.getElementById('commentBox').innerHTML = commentBox;
-    }
+    });
 }
 
-//Back To Top
-window.onscroll = function() {BackToTopFunction()};
-function BackToTopFunction() {
-    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        document.getElementById("backToTopBtn").className = "back-top-show";
-        let backToTop = document.getElementById('backToTopBtn');
-        backToTop.addEventListener('click',() => window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        }));
-    } else {
-        document.getElementById("backToTopBtn").className = "back-top";
-    }
-}
 
-//Reg Form Validation
-
-
-//Validate text input
-// function validateText(input){
-//
-// }
-//Validate email input
-// function validateEmail(input){
-//
-// }
-//Validate Integer 1
-// function validateInteger(input){
-//
-// }
-//Validate Amount 0.00
-// function validateAmount(input){
-//
-// }
-//Validate Password
-// function validatePassword(input){
-//
-// }
-//Validate checkbox
-// function validateCheckbox(input){
-//
-// }

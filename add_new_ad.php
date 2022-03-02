@@ -60,7 +60,7 @@ include ('includes/header.php');
                                 <div class="invalid-feedback">Please, select ad Category!</div>
                             </div><!--Select Ad Category-->
                             <div class="col-md-6 ">
-                                <select onchange="addCallToAction()" id="adTypeSelect" class="form-select" required aria-label="select example">
+                                <select id="adTypeSelect" class="form-select" required aria-label="select example">
                                     <option value="">Select Ad Type</option>
                                     <option value="Featured_Ad">1 Week Featured Text Ad - $13 USD</option>
                                     <option value="Image_Ad">1 Week Featured Text Ad with Image - $15 USD</option>
