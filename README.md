@@ -3,6 +3,9 @@
 ## Description
 RewardingBlog is a web application that aims to create a platform for users to write blog posts and earn points. The project incorporates features such as user registration, login, and a points system. However, some of the intended features like the reward system, affiliate system, and contests feature have not been fully implemented yet.
 
+## Online Demo
+Check out the online demo of RewardingBlog [here]([https://your-demo-link.com](https://sourceofanswers.com/index.php)).
+
 ## Technologies Used
 - PHP
 - jQuery
